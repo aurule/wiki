@@ -360,7 +360,7 @@
             color: mc('purple', '300');
           }
           &::after {
-            font: normal normal normal 24px Material Design Icons, sans-serif;
+            font: normal normal normal 24px/1 "Material Design Icons", sans-serif;
             content: "\F0142";
             text-decoration: none !important;
           }
