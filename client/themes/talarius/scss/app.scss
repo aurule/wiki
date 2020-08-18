@@ -530,6 +530,42 @@
     }
   }
 
+  dl {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    >* {
+      padding-top: 0.5em;
+    }
+  }
+  dt {
+    width: 20%;
+    font-weight: bold;
+    text-align: right;
+    + {
+      dt {
+        padding-right: 70%;
+        + {
+          dd {
+            margin-top: -1.625em;
+            padding-left: calc(20% + 1em);
+          }
+        }
+      }
+    }
+  }
+  dd {
+    width: 70%;
+    padding-left: 1em;
+    margin-left: 0px;
+    + {
+      dd {
+        width: 100%;
+        padding-left: calc(20% + 1em);
+      }
+    }
+  }
+
   // ---------------------------------
   // CODE
   // ---------------------------------
