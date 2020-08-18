@@ -366,9 +366,12 @@
           }
         }
       }
-    }
-}
 
+      @at-root .theme--dark & {
+        background-color: mc('purple', '900');
+        border-color: mc('purple', '500');
+      }
+    }
   }
 
   // ---------------------------------
