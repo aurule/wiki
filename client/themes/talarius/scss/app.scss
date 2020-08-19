@@ -722,6 +722,14 @@
         border-bottom: 1px solid mc('grey', '200');
       }
     }
+
+    &.shaded-table {
+      tr:nth-child(2n) {
+        td {
+          background-color: mc('grey', '100');
+        }
+      }
+    }
   }
 
   // ---------------------------------
