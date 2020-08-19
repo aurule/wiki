@@ -83,18 +83,19 @@
                   :items-per-page='1000'
                 )
                   template(v-slot:item='thm')
-                    td
-                      strong {{thm.item.text}}
-                    td
-                      span {{ thm.item.author }}
-                    td.text-xs-center
-                      v-progress-circular(v-if='thm.item.isDownloading', indeterminate, color='blue', size='20', :width='2')
-                      v-btn(v-else-if='thm.item.isInstalled && thm.item.installDate < thm.item.updatedAt', icon)
-                        v-icon.blue--text mdi-cached
-                      v-btn(v-else-if='thm.item.isInstalled', icon)
-                        v-icon.green--text mdi-check-bold
-                      v-btn(v-else, icon)
-                        v-icon.grey--text mdi-cloud-download
+                    tr
+                      td
+                        strong {{thm.item.text}}
+                      td
+                        span {{ thm.item.author }}
+                      td.text-xs-center
+                        v-progress-circular(v-if='thm.item.isDownloading', indeterminate, color='blue', size='20', :width='2')
+                        v-btn(v-else-if='thm.item.isInstalled && thm.item.installDate < thm.item.updatedAt', icon)
+                          v-icon.blue--text mdi-cached
+                        v-btn(v-else-if='thm.item.isInstalled', icon)
+                          v-icon.green--text mdi-check-bold
+                        v-btn(v-else, icon)
+                          v-icon.grey--text mdi-cloud-download
 
               v-card.mt-3.animated.fadeInUp.wait-p2s
                 v-toolbar(color='primary', dark, dense, flat)
