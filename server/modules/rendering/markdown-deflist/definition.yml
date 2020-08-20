@@ -1,0 +1,8 @@
+key: markdownDeflist
+title: Definition Lists
+description: Parse definition lists into dl tags
+author: requarks.io
+icon: mdi-format-list-text
+enabledDefault: true
+dependsOn: markdownCore
+props: {}
