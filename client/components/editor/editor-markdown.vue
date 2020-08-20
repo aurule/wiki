@@ -73,11 +73,31 @@
                 v-icon(color='error') mdi-alpha-e-box-outline
               v-list-item-title {{$t('editor:markup.blockquoteError')}}
             v-divider
-        v-tooltip(bottom, color='primary')
+            v-list-item(@click='insertBeforeEachLine({ content: `> `, after: `{.is-game}`})')
+              v-list-item-action
+                v-icon(color='purple') mdi-alpha-g-box-outline
+              v-list-item-title {{$t('editor:markup.blockquoteGame')}}
+            v-divider
+        v-menu(offset-y, open-on-hover)
           template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p7s(icon, tile, v-on='on', @click='insertBeforeEachLine({ content: `- `})').mx-0
+            v-btn.animated.fadeIn.wait-p6s(icon, tile, v-on='on').mx-0
               v-icon mdi-format-list-bulleted
-          span {{$t('editor:markup.unorderedList')}}
+          v-list.py-0
+            v-list-item(@click='insertBeforeEachLine({ content: `- `})')
+              v-list-item-action
+                v-icon mdi-format-list-bulleted
+              v-list-item-title {{$t('editor:markup.unorderedList')}}
+            v-divider
+            v-list-item(@click='insertBeforeEachLine({ content: `- `, after: `{.links-list}`})')
+              v-list-item-action
+                v-icon mdi-link-box-outline
+              v-list-item-title {{$t('editor:markup.linksList')}}
+            v-divider
+            v-list-item(@click='insertBeforeEachLine({ content: `- `, after: `{.grid-list}`})')
+              v-list-item-action
+                v-icon mdi-view-list-outline
+              v-list-item-title {{$t('editor:markup.gridList')}}
+            v-divider
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
             v-btn.animated.fadeIn.wait-p8s(icon, tile, v-on='on', @click='insertBeforeEachLine({ content: `1. `})').mx-0
