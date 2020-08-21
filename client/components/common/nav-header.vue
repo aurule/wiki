@@ -203,7 +203,7 @@
                 v-list-item-action: v-icon(color='red') mdi-logout
                 v-list-item-title.red--text {{$t('common:header.logout')}}
 
-          v-tooltip(v-else, left)
+          v-tooltip(v-else, bottom)
             template(v-slot:activator='{ on }')
               v-btn(icon, v-on='on', color='grey darken-3', href='/login')
                 v-icon(color='grey') mdi-account-circle
