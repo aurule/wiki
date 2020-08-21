@@ -3898,6 +3898,13 @@ animejs@^2.2.0:
   resolved "https://registry.yarnpkg.com/animejs/-/animejs-2.2.0.tgz#35eefdfc535b81949c9cb06f0b3e60c02e6fdc80"
   integrity sha1-Ne79/FNbgZScnLBvCz5gwC5v3IA=
 
+announcekit-vue@2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/announcekit-vue/-/announcekit-vue-2.0.3.tgz#82c188a58d2a917e6639216984377a69d7aad9ae"
+  integrity sha512-2/zYCJ4SdgXAc9wY1r0YqsWGoP+MnxOWL9aRjPXTcb18Ml4t80mioW8d4i2uImlKlVuWJfqBctyGyVZ5xDLLkw==
+  dependencies:
+    vue-runtime-helpers "^1.1.2"
+
 ansi-colors@^3.0.0:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-3.2.4.tgz#e3a3da4bfbae6c86a9c285625de124a234026fbf"
@@ -17591,6 +17598,11 @@ vue-router@3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.3.2.tgz#0099de402edb2fe92f9711053ab5a2156f239cad"
   integrity sha512-5sEbcfb7MW8mY8lbUVbF4kgcipGXsagkM/X+pb6n0MhjP+RorWIUTPAPSqgPaiPOxVCXgAItBl8Vwz8vq78faA==
+
+vue-runtime-helpers@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/vue-runtime-helpers/-/vue-runtime-helpers-1.1.2.tgz#446b7b820888ab0c5264d2c3a32468e72e4100f3"
+  integrity sha512-pZfGp+PW/IXEOyETE09xQHR1CKkR9HfHZdnMD/FVLUNI+HxYTa82evx5WrF6Kz4s82qtqHvMZ8MZpbk2zT2E1Q==
 
 vue-status-indicator@1.2.1:
   version "1.2.1"

@@ -156,6 +156,16 @@
               span {{$t('common:header.newPage')}}
             v-divider(vertical)
 
+          //- ANNOUNCEMENTS WIDGET
+
+          template(v-if='mode === `view`')
+            v-tooltip(bottom)
+              template(v-slot:activator='{ on }')
+                v-btn(icon, tile, height='64', v-on='on', class='ak-trigger')
+                  v-icon(color='grey') mdi-bell
+                  <AnnounceKit catchClick=".ak-trigger" widget="https://announcekit.app/widgets/v2/1PAiw8" />
+              span {{$t('common:header.announcements')}}
+
           //- ACCOUNT
 
           v-menu(v-if='isAuthenticated', offset-y, bottom, min-width='300', transition='slide-y-transition', left)
@@ -216,13 +226,16 @@ import { get, sync } from 'vuex-pathify'
 import _ from 'lodash'
 import Cookies from 'js-cookie'
 
+import AnnounceKit from 'announcekit-vue'
+
 import movePageMutation from 'gql/common/common-pages-mutation-move.gql'
 
 /* global siteConfig, siteLangs */
 
 export default {
   components: {
-    PageDelete: () => import('./page-delete.vue')
+    PageDelete: () => import('./page-delete.vue'),
+    AnnounceKit
   },
   props: {
     dense: {
