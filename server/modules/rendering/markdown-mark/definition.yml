@@ -1,0 +1,8 @@
+key: markdownMark
+title: Highlight Text
+description: Add text highlighting using "==" wrapper
+author: requarks.io
+icon: mdi-marker
+enabledDefault: true
+dependsOn: markdownCore
+props: {}
