@@ -76,7 +76,7 @@ module.exports = {
     }
 
     // -> Load dev locale files if present
-    if (WIKI.IS_DEBUG) {
+    if (true || WIKI.IS_DEBUG) {
       try {
         const devEntriesRaw = await fs.readFile(path.join(WIKI.SERVERPATH, `locales/${locale}.yml`), 'utf8')
         if (devEntriesRaw) {
