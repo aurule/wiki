@@ -76,7 +76,7 @@
             v-list-item(@click='insertBeforeEachLine({ content: `> `, after: `{.is-game}`})')
               v-list-item-action
                 v-icon(color='purple') mdi-alpha-g-box-outline
-              v-list-item-title {{$t('editor:markup.blockquoteGame')}}
+              v-list-item-title Game Card Blockquote
             v-divider
         v-menu(offset-y, open-on-hover)
           template(v-slot:activator='{ on }')
@@ -91,12 +91,12 @@
             v-list-item(@click='insertBeforeEachLine({ content: `- `, after: `{.links-list}`})')
               v-list-item-action
                 v-icon mdi-link-box-outline
-              v-list-item-title {{$t('editor:markup.linksList')}}
+              v-list-item-title Links List
             v-divider
             v-list-item(@click='insertBeforeEachLine({ content: `- `, after: `{.grid-list}`})')
               v-list-item-action
                 v-icon mdi-view-list-outline
-              v-list-item-title {{$t('editor:markup.gridList')}}
+              v-list-item-title Grid List
             v-divider
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
