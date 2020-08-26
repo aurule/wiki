@@ -627,6 +627,7 @@
     font-family: 'Roboto Mono', monospace;
     font-weight: normal;
     font-size: 1rem;
+    font-display: swap;
     box-shadow: none;
 
     &::before, &::after {
@@ -659,6 +660,7 @@
       display: block;
       font-size: .85rem;
       font-family: 'Roboto Mono', monospace;
+      font-display: swap;
 
       &:after, &:before {
         content: initial;
