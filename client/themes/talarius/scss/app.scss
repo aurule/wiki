@@ -553,6 +553,21 @@
         content: '\25C3';
       }
     }
+    ul {
+      > li::before {
+        content: '\25cf'
+      }
+      ul {
+        > li::before {
+          content: '\25a0'
+        }
+        ul {
+          > li::before {
+            content: '\25b8'
+          }
+        }
+      }
+    }
   }
   ol, ul:not(.tabset-tabs) {
     > li {
