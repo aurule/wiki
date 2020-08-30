@@ -10,6 +10,7 @@ WORKDIR /wiki
 COPY ./client ./client
 COPY ./dev ./dev
 COPY ./package.json ./package.json
+COPY ./yarn.lock ./yarn.lock
 COPY ./.babelrc ./.babelrc
 COPY ./.eslintignore ./.eslintignore
 COPY ./.eslintrc.yml ./.eslintrc.yml
@@ -40,6 +41,7 @@ COPY --chown=node:node ./server ./server
 COPY --chown=node:node --from=assets /wiki/server/views ./server/views
 COPY --chown=node:node ./dev/build/config.yml ./config.yml
 COPY --chown=node:node ./package.json ./package.json
+COPY --chown=node:node ./yarn.lock ./yarn.lock
 COPY --chown=node:node ./LICENSE ./LICENSE
 
 USER node
