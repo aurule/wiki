@@ -761,6 +761,10 @@
       }
     }
 
+    tbody + tbody tr:first-child td {
+      border-top: 2px solid mc('grey', '500');
+    }
+
     &.shaded-table {
       tr:nth-child(2n) {
         td {
