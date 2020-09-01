@@ -372,6 +372,26 @@
         border-color: mc('purple', '500');
       }
     }
+    &.is-example {
+      background-color: mc('teal', '50');
+      border-color: mc('teal', '300');
+      color: mc('teal', '900');
+
+      &::before {
+        content: "\F0CDF";
+      }
+
+      code {
+        background-color: mc('teal', '50');
+        color: mc('teal', '800');
+      }
+
+      @at-root .theme--dark & {
+        background-color: mc('teal', '900');
+        color: mc('teal', '50');
+        border-color: mc('teal', '500');
+      }
+    }
   }
 
   // ---------------------------------
@@ -544,6 +564,7 @@
     > li::before {
       position: absolute;
       left: -1.1rem;
+      font-family: Arial,Verdana,sans-serif;
       content: '\25b8';
       color: mc('grey', '600');
       width: 1.35rem;
@@ -740,12 +761,23 @@
       }
     }
 
+    tbody + tbody tr:first-child td {
+      border-top: 2px solid mc('grey', '500');
+    }
+
     &.shaded-table {
       tr:nth-child(2n) {
         td {
           background-color: mc('grey', '100');
         }
       }
+    }
+
+    caption {
+      font-weight: bold;
+      border-bottom: 1px solid mc('grey', '500');
+      border-image: radial-gradient(mc('grey', '700'), rgba(mc('grey', '700'), 0));
+      border-image-slice: 1;
     }
   }
 

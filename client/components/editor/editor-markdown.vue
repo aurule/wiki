@@ -53,6 +53,11 @@
                 v-icon mdi-alpha-t-box-outline
               v-list-item-title {{$t('editor:markup.blockquote')}}
             v-divider
+            v-list-item(@click='insertBeforeEachLine({ content: `> `, after: `{.is-example}`})')
+              v-list-item-action
+                v-icon(color='teal') mdi-alpha-x-box-outline
+              v-list-item-title Example Box
+            v-divider
             v-list-item(@click='insertBeforeEachLine({ content: `> `, after: `{.is-info}`})')
               v-list-item-action
                 v-icon(color='blue') mdi-alpha-i-box-outline
@@ -76,7 +81,7 @@
             v-list-item(@click='insertBeforeEachLine({ content: `> `, after: `{.is-game}`})')
               v-list-item-action
                 v-icon(color='purple') mdi-alpha-g-box-outline
-              v-list-item-title Game Card Blockquote
+              v-list-item-title Game Card
             v-divider
         v-menu(offset-y, open-on-hover)
           template(v-slot:activator='{ on }')
