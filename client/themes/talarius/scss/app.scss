@@ -564,6 +564,7 @@
     > li::before {
       position: absolute;
       left: -1.1rem;
+      font-family: Arial,Verdana,sans-serif;
       content: '\25b8';
       color: mc('grey', '600');
       width: 1.35rem;
