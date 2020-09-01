@@ -372,6 +372,26 @@
         border-color: mc('purple', '500');
       }
     }
+    &.is-example {
+      background-color: mc('teal', '50');
+      border-color: mc('teal', '300');
+      color: mc('teal', '900');
+
+      &::before {
+        content: "\F0CDF";
+      }
+
+      code {
+        background-color: mc('teal', '50');
+        color: mc('teal', '800');
+      }
+
+      @at-root .theme--dark & {
+        background-color: mc('teal', '900');
+        color: mc('teal', '50');
+        border-color: mc('teal', '500');
+      }
+    }
   }
 
   // ---------------------------------
