@@ -76,7 +76,7 @@
             v-list-item(@click='insertBeforeEachLine({ content: `> `, after: `{.is-game}`})')
               v-list-item-action
                 v-icon(color='purple') mdi-alpha-g-box-outline
-              v-list-item-title Game Card Blockquote
+              v-list-item-title Game Card
             v-divider
         v-menu(offset-y, open-on-hover)
           template(v-slot:activator='{ on }')
