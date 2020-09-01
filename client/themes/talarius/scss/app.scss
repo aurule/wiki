@@ -768,6 +768,13 @@
         }
       }
     }
+
+    caption {
+      font-weight: bold;
+      border-bottom: 1px solid mc('grey', '500');
+      border-image: radial-gradient(mc('grey', '700'), rgba(mc('grey', '700'), 0));
+      border-image-slice: 1;
+    }
   }
 
   // ---------------------------------
