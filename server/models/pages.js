@@ -583,17 +583,17 @@ module.exports = class Page extends Model {
     }
     switch (opts.mode) {
       case 'create':
-        replaceArgs.from = `<a href="${pageHref}" class="is-internal-link is-invalid-page">`
-        replaceArgs.to = `<a href="${pageHref}" class="is-internal-link is-valid-page">`
+        replaceArgs.from = `<a class="is-internal-link is-invalid-page" href="${pageHref}">`
+        replaceArgs.to = `<a class="is-internal-link is-valid-page" href="${pageHref}">`
         break
       case 'move':
         const prevPageHref = `/${opts.sourceLocale}/${opts.sourcePath}`
-        replaceArgs.from = `<a href="${prevPageHref}" class="is-internal-link is-invalid-page">`
-        replaceArgs.to = `<a href="${pageHref}" class="is-internal-link is-valid-page">`
+        replaceArgs.from = `<a class="is-internal-link is-invalid-page" href="${prevPageHref}">`
+        replaceArgs.to = `<a class="is-internal-link is-valid-page" href="${pageHref}">`
         break
       case 'delete':
-        replaceArgs.from = `<a href="${pageHref}" class="is-internal-link is-valid-page">`
-        replaceArgs.to = `<a href="${pageHref}" class="is-internal-link is-invalid-page">`
+        replaceArgs.from = `<a class="is-internal-link is-valid-page" href="${pageHref}">`
+        replaceArgs.to = `<a class="is-internal-link is-invalid-page" href="${pageHref}">`
         break
       default:
         return false
