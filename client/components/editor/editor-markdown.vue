@@ -245,7 +245,6 @@ import mdMark from 'markdown-it-mark'
 import mdFootnote from 'markdown-it-footnote'
 import mdImsize from 'markdown-it-imsize'
 import mdDeflist from 'markdown-it-deflist'
-import mdMultimdtable from 'markdown-it-multimd-table'
 import katex from 'katex'
 import 'katex/dist/contrib/mhchem'
 import twemoji from 'twemoji'
@@ -305,7 +304,6 @@ const md = new MarkdownIt({
   .use(mdFootnote)
   .use(mdImsize)
   .use(mdDeflist)
-  .use(mdMultimdtable, {rowspan: true, headerless: true})
 
 // ========================================
 // HELPER FUNCTIONS
