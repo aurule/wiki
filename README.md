@@ -27,11 +27,13 @@
 - [Demo](https://docs.requarks.io/demo)
 - [Change Log](https://docs.requarks.io/releases)
 - [Feature Requests](https://wiki.js.org/feedback)
-- [Chat with us on Slack](#slack)
-- [Translations](#translations) *(We need your help!)*
+- [Chat with us on Slack](https://wiki.requarks.io/slack)
+- [Translations](https://docs.requarks.io/dev/translations) *(We need your help!)*
 - [E2E Testing Results](https://dashboard.cypress.io/projects/r7qxah/runs)
 - [Special Thanks](#special-thanks)
 - [Contribute](#contributors)
+
+[Follow our Twitter feed](https://twitter.com/requarks) to learn about upcoming updates and new releases!
 
 <h2 align="center">Donate</h2>
 
@@ -49,25 +51,6 @@ Wiki.js is an open source project that has been made possible due to the generou
 
 </div>
 
-<h2 align="center">Slack</h2>
-
-<div align="center">
-
-Want to discuss features, ideas or issues? Join our [Slack channel](https://wiki.requarks.io/slack). We are very active and friendly!  
-
-[![Chat on Slack](https://img.shields.io/badge/slack-requarks-CC2B5E.svg?style=flat&logo=slack)](https://wiki.requarks.io/slack)
-
-</div>
-
-<h2 align="center">Twitter</h2>
-
-<div align="center">
-
-Follow our Twitter feed to learn about upcoming updates and new releases!  
-[![Twitter Follow](https://img.shields.io/badge/follow-%40requarks-blue.svg?style=popout&logo=twitter)](https://twitter.com/requarks)  
-
-</div>
-
 <h2 align="center">GitHub Sponsors</h2>
 
 Support this project by becoming a sponsor. Your name will show up in the Contribute page of all Wiki.js installations as well as here with a link to your website! [[Become a sponsor](https://github.com/users/NGPixel/sponsorship)]
@@ -79,6 +62,11 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
       <td align="center" valign="middle" width="148">
         <a href="https://github.com/alexksso" target="_blank">
           Alexander Casassovici<br />(@alexksso)
+        </a>
+      </td>
+      <td align="center" valign="middle" width="148">
+        <a href="https://github.com/xDacon" target="_blank">
+          Dacon<br />(@xDacon)
         </a>
       </td>
       <td align="center" valign="middle" width="148">
@@ -101,7 +89,6 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
           <img src="https://static.requarks.io/sponsors/become-148x72.png">
         </a>
       </td>
-      <td align="center" valign="middle" width="148"></td>
     </tr>
   </tbody>
 </table>
@@ -110,12 +97,15 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
 - Akira Suenami ([@a-suenami](https://github.com/a-suenami))
 - Bryon Vandiver ([@asterick](https://github.com/asterick))
 - CrazyMarvin ([@CrazyMarvin](https://github.com/CrazyMarvin))
+- David Christian Holin ([@SirGibihm](https://github.com/SirGibihm))
 - Dragan Espenschied ([@despens](https://github.com/despens))
 - Elijah Zobenko ([@he110](https://github.com/he110))
 - Ernie ([@iamernie](https://github.com/iamernie))
 - Florian Moss ([@florianmoss](https://github.com/florianmoss))
+- Kelly Wardrop ([@dropcoded](https://github.com/dropcoded))
 - Loki ([@binaryloki](https://github.com/binaryloki))
 - Mattias Johnson ([@mattiasJohnson](https://github.com/mattiasJohnson))
+- Mitchell Rowton ([@mrowton](https://github.com/mrowton))
 - M. Scott Ford ([@mscottford](https://github.com/mscottford))
 - Nina Reynolds ([@cutecycle](https://github.com/cutecycle))
 - Noel Cower ([@nilium](https://github.com/nilium))
@@ -124,6 +114,7 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
 - aniketpanjwani ([@aniketpanjwani](https://github.com/aniketpanjwani))
 - aytaa ([@aytaa](https://github.com/aytaa))
 - magicpotato ([@fortheday](https://github.com/fortheday))
+- valantien ([@valantien](https://github.com/valantien))
 
 <h2 align="center">OpenCollective Sponsors</h2>
 
@@ -166,6 +157,26 @@ Support this project by becoming a sponsor. Your logo will show up in the Contri
       </td>
       <td align="center" valign="middle" width="192">
         <a href="https://opencollective.com/wikijs/sponsor/9/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/9/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle" width="192">
+        <a href="https://opencollective.com/wikijs/sponsor/10/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/10/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle" width="192">
+        <a href="https://opencollective.com/wikijs/sponsor/11/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/11/avatar.svg"></a>
+      </td>
+    </tr>
+        <tr>
+      <td align="center" valign="middle" width="192">
+        <a href="https://opencollective.com/wikijs/sponsor/12/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/12/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle" width="192">
+        <a href="https://opencollective.com/wikijs/sponsor/13/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/13/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle" width="192">
+        <a href="https://opencollective.com/wikijs/sponsor/14/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/14/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle" width="192">
+        <a href="https://opencollective.com/wikijs/sponsor/15/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/15/avatar.svg"></a>
       </td>
     </tr>
   </tbody>
@@ -234,7 +245,3 @@ This project exists thanks to all the people who contribute. [[Contribute]](http
 
 ![Netlify](https://wiki.js.org/legacy/logo_netlify.png)  
 [Netlify](https://www.netlify.com) for providing hosting for landings and blog websites.
-
-<h2 align="center">Translations</h2>
-
-We are looking for translators to make Wiki.js UI available in as many languages as possible. If you would like to contribute to this project, [click here](https://lokalise.com/public/2994254859f751ea605a00.03473540/) to gain access to our translation tool, absolutely no coding required! Feel free to contact us on our [Slack channel](https://wiki.requarks.io/slack) if you have any questions.

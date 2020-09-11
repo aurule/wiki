@@ -120,6 +120,9 @@ module.exports = class S3CompatibleStorage {
     await this.s3.copyObject({ CopySource: asset.path, Key: asset.destinationPath }).promise()
     await this.s3.deleteObject({ Key: asset.path }).promise()
   }
+  async getLocalLocation () {
+
+  }
   /**
    * HANDLERS
    */
@@ -128,7 +131,7 @@ module.exports = class S3CompatibleStorage {
 
     // -> Pages
     await pipeline(
-      WIKI.models.knex.column('path', 'localeCode', 'title', 'description', 'contentType', 'content', 'isPublished', 'updatedAt').select().from('pages').where({
+      WIKI.models.knex.column('path', 'localeCode', 'title', 'description', 'contentType', 'content', 'isPublished', 'updatedAt', 'createdAt').select().from('pages').where({
         isPrivate: false
       }).stream(),
       new stream.Transform({
