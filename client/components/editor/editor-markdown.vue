@@ -327,6 +327,21 @@ const md = new MarkdownIt({
   .use(mdImsize)
   .use(mdDeflist)
 
+// DOMPurify fix for draw.io
+DOMPurify.addHook('uponSanitizeElement', (elm) => {
+  if (elm.querySelectorAll) {
+    const breaks = elm.querySelectorAll('foreignObject br, foreignObject p')
+    if (breaks && breaks.length) {
+      for (let i = 0; i < breaks.length; i++) {
+        breaks[i].parentNode.replaceChild(
+          document.createElement('div'),
+          breaks[i]
+        )
+      }
+    }
+  }
+})
+
 // ========================================
 // HELPER FUNCTIONS
 // ========================================
@@ -486,7 +501,9 @@ export default {
       linesMap = []
       // this.$store.set('editor/content', newContent)
       this.processMarkers(this.cm.firstLine(), this.cm.lastLine())
-      this.previewHTML = DOMPurify.sanitize(md.render(newContent))
+      this.previewHTML = DOMPurify.sanitize(md.render(newContent), {
+        ADD_TAGS: ['foreignObject']
+      })
       this.$nextTick(() => {
         tabsetHelper.format()
         this.renderMermaidDiagrams()
