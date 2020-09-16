@@ -1,0 +1,24 @@
+/* Change list bullet style per nested list level */
+
+.v-main .contents {
+  ul:not(.tabset-tabs) {
+    > li::before {
+      font-family: Arial,Verdana,sans-serif;
+    }
+    ul {
+      > li::before {
+        content: '\25cf'
+      }
+      ul {
+        > li::before {
+          content: '\25a0'
+        }
+        ul {
+          > li::before {
+            content: '\25b8'
+          }
+        }
+      }
+    }
+  }
+}

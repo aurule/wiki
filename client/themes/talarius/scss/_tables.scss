@@ -1,0 +1,27 @@
+/* Styling for table elements */
+
+.v-main .contents {
+  table {
+    // solid border between multiple body sections
+    tbody + tbody tr:first-child td {
+      border-top: 2px solid mc('grey', '500');
+    }
+
+    // alternate row shading in helper class
+    &.shaded-table {
+      tr:nth-child(even) {
+        td {
+          background-color: mc('grey', '100');
+        }
+      }
+    }
+
+    // fancy gradient underline for table caption
+    caption {
+      font-weight: bold;
+      border-bottom: 1px solid mc('grey', '500');
+      border-image: radial-gradient(mc('grey', '700'), rgba(mc('grey', '700'), 0));
+      border-image-slice: 1;
+    }
+  }
+}

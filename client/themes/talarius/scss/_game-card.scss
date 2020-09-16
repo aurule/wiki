@@ -1,0 +1,39 @@
+/* Styling for game summary cards */
+
+.v-main .contents {
+  blockquote.is-game {
+    background-color: mc('purple', '50');
+    border-color: mc('purple', '300');
+
+    &::before {
+      content: "\F0E36";
+    }
+
+    code {
+      background-color: mc('purple', '50');
+      color: mc('purple', '900');
+    }
+
+    h2 {
+      a.is-internal-link {
+        text-decoration: none;
+        position: relative;
+        color: unset;
+        &:hover {
+          text-decoration: underline;
+          color: mc('purple', '300');
+        }
+        &::after {
+          font: normal normal normal 24px/1 "Material Design Icons", sans-serif;
+          content: "\F0142";
+          text-decoration: none !important;
+        }
+      }
+    }
+
+    @at-root .theme--dark & {
+      background-color: mc('purple', '900');
+      border-color: mc('purple', '500');
+    }
+  }
+}
