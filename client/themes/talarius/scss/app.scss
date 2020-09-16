@@ -770,7 +770,7 @@
     }
 
     &.shaded-table {
-      tr:nth-child(2n) {
+      tr:nth-child(even) {
         td {
           background-color: mc('grey', '100');
         }
