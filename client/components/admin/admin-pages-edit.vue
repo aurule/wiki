@@ -39,9 +39,9 @@
                 v-list-item-icon
                   v-icon(color='indigo') mdi-pencil
                 v-list-item-title Edit
-              v-list-item(@click='', disabled)
+              v-list-item(@click='rerenderPage', :disabled='loading', :loading='isRerendering')
                 v-list-item-icon
-                  v-icon(color='grey') mdi-cube-scan
+                  v-icon(color='indigo') mdi-cube-scan
                 v-list-item-title Re-Render
               v-list-item(@click='', disabled)
                 v-list-item-icon
@@ -162,6 +162,8 @@
 </template>
 <script>
 import _ from 'lodash'
+import gql from 'graphql-tag'
+import utilityContentRebuildTreeMutation from 'gql/admin/utilities/utilities-mutation-content-rebuildtree.gql'
 import { StatusIndicator } from 'vue-status-indicator'
 
 import pageQuery from 'gql/admin/pages/pages-query-single.gql'
@@ -205,11 +207,50 @@ export default {
       this.$store.commit(`loadingStop`, 'page-delete')
     },
     async rerenderPage() {
-      this.$store.commit('showNotification', {
-        style: 'indigo',
-        message: `Coming soon...`,
-        icon: 'directions_boat'
-      })
+      this.loading = true
+      this.isRerendering = true
+      this.$store.commit(`loadingStart`, 'page-rerender')
+      try {
+        const respRaw = await this.$apollo.mutate({
+          mutation: gql`
+            mutation($id: Int!) {
+              pages {
+                render(id: $id) {
+                  responseResult {
+                    succeeded
+                    errorCode
+                    slug
+                    message
+                  }
+                }
+              }
+            }
+          `,
+          variables: {
+            id: this.page.id
+          }
+        })
+        const resp = _.get(respRaw, 'data.pages.render.responseResult', {})
+        if (resp.succeeded) {
+          this.$store.commit('showNotification', {
+            message: `Successfully endered page ${this.page.id}`,
+            style: 'success',
+            icon: 'check'
+          })
+        } else {
+          this.$store.commit('showNotification', {
+            message: `Page ${this.page.id} failed to render. Check server logs for details.`,
+            style: 'error',
+            icon: 'alert'
+          })
+        }
+      } catch (err) {
+        this.$store.commit('pushGraphError', err)
+      }
+
+      this.$store.commit(`loadingStop`, 'page-rerender')
+      this.isRerendering = false
+      this.loading = false
     }
   },
   apollo: {
