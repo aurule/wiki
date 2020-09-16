@@ -158,6 +158,15 @@ module.exports = class User extends Model {
     return _.uniq(_.map(this.groups, 'id'))
   }
 
+  async notifyMail(email_opts) {
+    email_opts = {
+      template: 'userNotify',
+      to: this.email,
+      ...email_opts
+    }
+    await WIKI.mail.send(email_opts)
+  }
+
   // ------------------------------------------------
   // Model Methods
   // ------------------------------------------------
@@ -654,6 +663,21 @@ module.exports = class User extends Model {
           text: `You've been invited to the wiki ${WIKI.config.title}: ${WIKI.config.host}/login`
         })
       }
+      WIKI.models.users.forEach(adminUser => {
+        if (WIKI.auth.checkAccess(adminUser, ['manage:users'])) {
+          adminUser.notifyMail({
+            subject: `New user '${name}' created on ${WIKI.config.title}`,
+            data: {
+              preheadertext: `A new user was created on ${WIKI.config.title}`,
+              title: `A new user was created on ${WIKI.config.title}`,
+              content: `The user '${name} (${email})' was just created on ${WIKI.config.title}. Click below to visit the admin area and review their permissions.`,
+              buttonLink: `${WIKI.config.host}/a/users/${newUsr.id}`,
+              buttonText: `Manage '${name}'`
+            },
+            text: `The user '${name} (${email})' was just created on ${WIKI.config.title}. Visit ${WIKI.config.host}/a/users/${newUsr.id} to manage their permissions.`
+          })
+        }
+      })
     } else {
       throw new WIKI.Error.AuthAccountAlreadyExists()
     }
