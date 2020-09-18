@@ -19,6 +19,9 @@
     // fancy gradient underline for table caption
     caption {
       font-weight: bold;
+      border-left: 0px;
+      border-top: 0px;
+      border-right: 0px;
       border-bottom: 1px solid mc('grey', '500');
       border-image: radial-gradient(mc('grey', '700'), rgba(mc('grey', '700'), 0));
       border-image-slice: 1;
