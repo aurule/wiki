@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@aoberoi/passport-slack": "1.0.5",
-    "@aurule/ckeditor5": "19.0.1-wiki.2-talarius1",
+    "@aurule/ckeditor5": "19.0.1-wiki.2-talarius2",
     "@azure/storage-blob": "12.2.0",
     "@bugsnag/js": "7.3.4",
     "@exlinc/keycloak-passport": "1.0.2",

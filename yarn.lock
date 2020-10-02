@@ -176,10 +176,10 @@
   dependencies:
     tslib "~2.0.1"
 
-"@aurule/ckeditor5@19.0.1-wiki.2-talarius1":
-  version "19.0.1-wiki.2-talarius1"
-  resolved "https://registry.yarnpkg.com/@aurule/ckeditor5/-/ckeditor5-19.0.1-wiki.2-talarius1.tgz#d27e0d8b4700431f583cef0f5ee5034a83725b1c"
-  integrity sha512-RijA+prtEKnh4ofNNvEw7hd3DLsH8/pNiLmEGm34IEPbSE8a3EetgT3Gl2pgvgAOGIsCLi2jpIIjkwLTPFRKGg==
+"@aurule/ckeditor5@19.0.1-wiki.2-talarius2":
+  version "19.0.1-wiki.2-talarius2"
+  resolved "https://registry.yarnpkg.com/@aurule/ckeditor5/-/ckeditor5-19.0.1-wiki.2-talarius2.tgz#a3d4f72288542252b811df57987584a363d021cf"
+  integrity sha512-fAeZw6QSZ8llwNbiL/zSG+fRsM1HBztQQhTQ0KOvMqYJ09wHfu4dYvAwPTiO+MSrfEVdCAQSle8JEe+fr0A+Bw==
 
 "@azure/abort-controller@^1.0.0":
   version "1.0.1"
