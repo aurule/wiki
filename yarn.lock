@@ -176,6 +176,11 @@
   dependencies:
     tslib "~2.0.1"
 
+"@aurule/ckeditor5@19.0.1-wiki.2-talarius2":
+  version "19.0.1-wiki.2-talarius2"
+  resolved "https://registry.yarnpkg.com/@aurule/ckeditor5/-/ckeditor5-19.0.1-wiki.2-talarius2.tgz#a3d4f72288542252b811df57987584a363d021cf"
+  integrity sha512-fAeZw6QSZ8llwNbiL/zSG+fRsM1HBztQQhTQ0KOvMqYJ09wHfu4dYvAwPTiO+MSrfEVdCAQSle8JEe+fr0A+Bw==
+
 "@azure/abort-controller@^1.0.0":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@azure/abort-controller/-/abort-controller-1.0.1.tgz#8510935b25ac051e58920300e9d7b511ca6e656a"
@@ -2904,11 +2909,6 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
-
-"@requarks/ckeditor5@19.0.1-wiki.2":
-  version "19.0.1-wiki.2"
-  resolved "https://registry.yarnpkg.com/@requarks/ckeditor5/-/ckeditor5-19.0.1-wiki.2.tgz#d601d868522680095ba50ded08094d72d74c4ca4"
-  integrity sha512-l2B7VB7SmX318IAwx9EdYmDujCEBQB7b+v5ySfLyK42eyKarWBuK76R0o2TudRn2z/17dvmR5zaQBEW3fDIPsg==
 
 "@root/acme@^3.0.2":
   version "3.0.9"
