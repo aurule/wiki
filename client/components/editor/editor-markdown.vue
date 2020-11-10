@@ -250,6 +250,7 @@ import './markdown/fold'
 // Markdown-it
 import MarkdownIt from 'markdown-it'
 import mdAttrs from 'markdown-it-attrs'
+import mdBracketSpan from 'markdown-it-bracketed-spans'
 import mdEmoji from 'markdown-it-emoji'
 import mdTaskLists from 'markdown-it-task-lists'
 import mdExpandTabs from 'markdown-it-expand-tabs'
@@ -314,6 +315,7 @@ const md = new MarkdownIt({
   .use(mdAttrs, {
     allowedAttributes: ['id', 'class', 'target']
   })
+  .use(mdBracketSpan)
   .use(underline)
   .use(mdEmoji)
   .use(mdTaskLists, {label: true, labelAfter: true})
