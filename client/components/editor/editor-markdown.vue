@@ -18,6 +18,7 @@
                   v-icon(:size='24 - (idx - 1) * 2') mdi-format-header-{{n}}
                 v-list-item-title {{$t('editor:markup.heading', { level: n })}}
               v-divider(v-if='idx < 5')
+        v-divider(inset vertical)
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
             v-btn.animated.fadeIn(icon, tile, v-on='on', @click='toggleMarkup({ start: `**` })').mx-0
@@ -38,6 +39,7 @@
             v-btn.animated.fadeIn.wait-p2s(icon, tile, v-on='on', @click='toggleMarkup({ start: `~~` })').mx-0
               v-icon mdi-format-strikethrough
           span {{$t('editor:markup.strikethrough')}}
+        v-divider(inset vertical)
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
             v-btn.animated.fadeIn.wait-p4s(icon, tile, v-on='on', @click='toggleMarkup({ start: `~` })').mx-0
@@ -48,11 +50,13 @@
             v-btn.animated.fadeIn.wait-p5s(icon, tile, v-on='on', @click='toggleMarkup({ start: `^` })').mx-0
               v-icon mdi-format-superscript
           span {{$t('editor:markup.superscript')}}
+        v-divider(inset vertical)
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
             v-btn.animated.fadeIn.wait-p10s(icon, tile, v-on='on', @click='toggleMarkup({ start: `<mark>`, end: `</mark>` })').mx-0
               v-icon mdi-format-color-highlight
           span Highlight
+        v-divider(inset vertical)
         v-menu(offset-y, open-on-hover)
           template(v-slot:activator='{ on }')
             v-btn.animated.fadeIn.wait-p6s(icon, tile, v-on='on').mx-0
@@ -93,6 +97,7 @@
                 v-icon(color='purple') mdi-alpha-g-box-outline
               v-list-item-title Game Card
             v-divider
+        v-divider(inset vertical)
         v-menu(offset-y, open-on-hover)
           template(v-slot:activator='{ on }')
             v-btn.animated.fadeIn.wait-p6s(icon, tile, v-on='on').mx-0
@@ -123,6 +128,7 @@
             v-btn.animated.fadeIn.wait-p8s(icon, tile, v-on='on', @click='insertBeforeEachLine({ content: `- [ ] `})').mx-0
               v-icon mdi-format-list-checks
           span To-do List
+        v-divider(inset vertical)
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
             v-btn.animated.fadeIn.wait-p9s(icon, tile, v-on='on', @click='toggleMarkup({ start: "`" })').mx-0
