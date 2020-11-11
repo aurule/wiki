@@ -548,9 +548,13 @@ export default {
     },
     /**
      * Wrap selection with start / end tags
+     * @param  {string} options.start Start tag text
+     * @param  {string} options.end   End tag text
+     * @param  {Array(String)} options.attrs HTML attributes to apply
      */
-    toggleMarkup({ start, end }) {
+    toggleMarkup({ start, end, attrs }) {
       if (!end) { end = start }
+      if (attrs) { end = end + '{' + attrs.join(' ') + '}' }
       if (!this.cm.doc.somethingSelected()) {
         return this.$store.commit('showNotification', {
           message: this.$t('editor:markup.noSelectionError'),
@@ -598,16 +602,15 @@ export default {
     },
     /**
      * Wrap selection with start / end tags, or insert start tag at cursor if no selection
-     *
      * @param  {string} options.start Start tag text
      * @param  {string} options.end   End tag text
+     * @param  {Array(String)} options.attrs HTML attributes to apply
      */
-    wrapOrInsert({ start, end }) {
-      if (!end) { end = start }
+    wrapOrInsert({ start, end, attrs }) {
       if (!this.cm.doc.somethingSelected()) {
         this.insertAtCursor( { content: start } )
       } else {
-        this.toggleMarkup( {start: start, end: end} )
+        this.toggleMarkup( {start: start, end: end, attrs: attrs} )
       }
     },
     /**
