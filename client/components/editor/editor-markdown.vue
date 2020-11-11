@@ -597,6 +597,20 @@ export default {
       this.cm.doc.replaceRange(content, cursor)
     },
     /**
+     * Wrap selection with start / end tags, or insert start tag at cursor if no selection
+     *
+     * @param  {string} options.start Start tag text
+     * @param  {string} options.end   End tag text
+     */
+    wrapOrInsert({ start, end }) {
+      if (!end) { end = start }
+      if (!this.cm.doc.somethingSelected()) {
+        this.insertAtCursor(start)
+      } else {
+        this.toggleMarkup({start: start, end: end})
+      }
+    },
+    /**
      * Insert content after current line
      */
     insertAfter({ content, newLine }) {
