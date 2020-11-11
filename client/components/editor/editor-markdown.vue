@@ -26,33 +26,33 @@
         v-divider(inset vertical).animated.fadeIn
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p1s(icon, tile, v-on='on', @click='toggleMarkup({ start: `**` })').mx-0
+            v-btn.animated.fadeIn.wait-p1s(icon, tile, v-on='on', @click='wrapOrInsert({ start: `**` })').mx-0
               v-icon mdi-format-bold
           span {{$t('editor:markup.bold')}}
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p1s(icon, tile, v-on='on', @click='toggleMarkup({ start: `*` })').mx-0
+            v-btn.animated.fadeIn.wait-p1s(icon, tile, v-on='on', @click='wrapOrInsert({ start: `*` })').mx-0
               v-icon mdi-format-italic
           span {{$t('editor:markup.italic')}}
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p1s(icon, tile, v-on='on', @click='toggleMarkup({ start: `_` })').mx-0
+            v-btn.animated.fadeIn.wait-p1s(icon, tile, v-on='on', @click='wrapOrInsert({ start: `_` })').mx-0
               v-icon mdi-format-underline
           span Underline
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p1s(icon, tile, v-on='on', @click='toggleMarkup({ start: `~~` })').mx-0
+            v-btn.animated.fadeIn.wait-p1s(icon, tile, v-on='on', @click='wrapOrInsert({ start: `~~` })').mx-0
               v-icon mdi-format-strikethrough
           span {{$t('editor:markup.strikethrough')}}
         v-divider(inset vertical).animated.fadeIn.wait-p1s
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p2s(icon, tile, v-on='on', @click='toggleMarkup({ start: `~` })').mx-0
+            v-btn.animated.fadeIn.wait-p2s(icon, tile, v-on='on', @click='wrapOrInsert({ start: `~` })').mx-0
               v-icon mdi-format-subscript
           span {{$t('editor:markup.subscript')}}
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p2s(icon, tile, v-on='on', @click='toggleMarkup({ start: `^` })').mx-0
+            v-btn.animated.fadeIn.wait-p2s(icon, tile, v-on='on', @click='wrapOrInsert({ start: `^` })').mx-0
               v-icon mdi-format-superscript
           span {{$t('editor:markup.superscript')}}
         v-divider(inset vertical).animated.fadeIn.wait-p2s
@@ -136,7 +136,7 @@
         v-divider(inset vertical).animated.fadeIn.wait-p5s
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p6s(icon, tile, v-on='on', @click='toggleMarkup({ start: "`" })').mx-0
+            v-btn.animated.fadeIn.wait-p6s(icon, tile, v-on='on', @click='wrapOrInsert({ start: "`" })').mx-0
               v-icon mdi-code-tags
           span {{$t('editor:markup.inlineCode')}}
         v-tooltip(bottom, color='primary')
@@ -874,11 +874,11 @@ export default {
       return false
     })
     _.set(keyBindings, `${CtrlKey}-B`, c => {
-      this.toggleMarkup({ start: `**` })
+      this.wrapOrInsert({ start: `**` })
       return false
     })
     _.set(keyBindings, `${CtrlKey}-I`, c => {
-      this.toggleMarkup({ start: `*` })
+      this.wrapOrInsert({ start: `*` })
       return false
     })
     _.set(keyBindings, `${CtrlKey}-Alt-Right`, c => {
