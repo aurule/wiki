@@ -605,9 +605,9 @@ export default {
     wrapOrInsert({ start, end }) {
       if (!end) { end = start }
       if (!this.cm.doc.somethingSelected()) {
-        this.insertAtCursor(start)
+        this.insertAtCursor( { content: start } )
       } else {
-        this.toggleMarkup({start: start, end: end})
+        this.toggleMarkup( {start: start, end: end} )
       }
     },
     /**
