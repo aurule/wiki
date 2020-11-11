@@ -12,6 +12,11 @@
             v-btn.animated.fadeIn.wait-p3s(icon, tile, v-on='on').mx-0
               v-icon mdi-format-header-pound
           v-list.py-0
+            v-list-item(@click='setHeaderLine(0)', :key='p')
+              v-list-item-action
+                v-icon(:size='16') mdi-format-paragraph
+              v-list-item-title Paragraph
+            v-divider
             template(v-for='(n, idx) in 6')
               v-list-item(@click='setHeaderLine(n)', :key='idx')
                 v-list-item-action
@@ -565,7 +570,9 @@ export default {
       if (_.startsWith(lineContent, '#')) {
         lineContent = lineContent.replace(/^(#+ )/, '')
       }
-      lineContent = _.times(lvl, n => '#').join('') + ` ` + lineContent
+      if (lvl > 0) {
+        lineContent = _.times(lvl, n => '#').join('') + ` ` + lineContent
+      }
       this.cm.doc.replaceRange(lineContent, { line: curLine, ch: 0 }, { line: curLine, ch: lineLength })
     },
     /**
