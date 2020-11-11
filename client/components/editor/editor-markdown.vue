@@ -14,7 +14,7 @@
           v-list.py-0
             v-list-item(@click='setHeaderLine(0)', :key='p')
               v-list-item-action
-                v-icon(:size='16') mdi-format-paragraph
+                v-icon(:size='20') mdi-format-pilcrow
               v-list-item-title Paragraph
             v-divider
             template(v-for='(n, idx) in 6')
