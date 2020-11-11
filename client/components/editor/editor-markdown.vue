@@ -58,7 +58,7 @@
         v-divider(inset vertical).animated.fadeIn.wait-p2s
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p3s(icon, tile, v-on='on', @click='wrapOrInsert({ start: `==`, attrs: [`.marker-yellow`] })').mx-0
+            v-btn.animated.fadeIn.wait-p3s(icon, tile, v-on='on', @click='toggleMarkup({ start: `==`, attrs: [`.marker-yellow`] })').mx-0
               v-icon mdi-format-color-highlight
           span Highlight
         v-divider(inset vertical).animated.fadeIn.wait-p3s
