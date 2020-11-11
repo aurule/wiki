@@ -893,6 +893,30 @@ export default {
       this.setHeaderLine(lvl - 1)
       return false
     })
+    _.set(keyBindings, '[', c => {
+      this.wrapOrInsert({ start: '[', end: ']' })
+      return false
+    })
+    _.set(keyBindings, 'Shift-9', c => {
+      this.wrapOrInsert({ start: '(', end: ')' })
+      return false
+    })
+    _.set(keyBindings, 'Shift-[', c => {
+      this.wrapOrInsert({ start: '{', end: '}' })
+      return false
+    })
+    _.set(keyBindings, 'Shift-8', c => {
+      this.wrapOrInsert({ start: '*' })
+      return false
+    })
+    _.set(keyBindings, 'Shift--', c => {
+      this.wrapOrInsert({ start: '_' })
+      return false
+    })
+    _.set(keyBindings, '`', c => {
+      this.wrapOrInsert({ start: '`' })
+      return false
+    })
     this.cm.setOption('extraKeys', keyBindings)
 
     this.cm.on('inputRead', this.autocomplete)
