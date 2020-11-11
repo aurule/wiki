@@ -920,6 +920,14 @@ export default {
       this.wrapOrInsert({ start: '`' })
       return false
     })
+    _.set(keyBindings, `'`, c => {
+      this.wrapOrInsert({ start: `'` })
+      return false
+    })
+    _.set(keyBindings, `Shift-'`, c => {
+      this.wrapOrInsert({ start: `"` })
+      return false
+    })
     this.cm.setOption('extraKeys', keyBindings)
 
     this.cm.on('inputRead', this.autocomplete)
