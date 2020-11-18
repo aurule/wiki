@@ -7,45 +7,64 @@
           v-icon(left) mdi-arrow-left-circle
           span {{$t('editor:backToEditor')}}
       template(v-else)
-        v-tooltip(bottom, color='primary')
-          template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn(icon, tile, v-on='on', @click='toggleMarkup({ start: `**` })').mx-0
-              v-icon mdi-format-bold
-          span {{$t('editor:markup.bold')}}
-        v-tooltip(bottom, color='primary')
-          template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p1s(icon, tile, v-on='on', @click='toggleMarkup({ start: `*` })').mx-0
-              v-icon mdi-format-italic
-          span {{$t('editor:markup.italic')}}
-        v-tooltip(bottom, color='primary')
-          template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p2s(icon, tile, v-on='on', @click='toggleMarkup({ start: `~~` })').mx-0
-              v-icon mdi-format-strikethrough
-          span {{$t('editor:markup.strikethrough')}}
         v-menu(offset-y, open-on-hover)
           template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p3s(icon, tile, v-on='on').mx-0
+            v-btn.animated.fadeIn(icon, tile, v-on='on').mx-0
               v-icon mdi-format-header-pound
           v-list.py-0
+            v-list-item(@click='setHeaderLine(0)', :key='p')
+              v-list-item-action
+                v-icon(:size='20') mdi-format-pilcrow
+              v-list-item-title Paragraph
+            v-divider
             template(v-for='(n, idx) in 6')
               v-list-item(@click='setHeaderLine(n)', :key='idx')
                 v-list-item-action
                   v-icon(:size='24 - (idx - 1) * 2') mdi-format-header-{{n}}
                 v-list-item-title {{$t('editor:markup.heading', { level: n })}}
               v-divider(v-if='idx < 5')
+        v-divider(inset vertical).animated.fadeIn
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p4s(icon, tile, v-on='on', @click='toggleMarkup({ start: `~` })').mx-0
+            v-btn.animated.fadeIn.wait-p1s(icon, tile, v-on='on', @click='wrapOrInsert({ start: `**` })').mx-0
+              v-icon mdi-format-bold
+          span {{$t('editor:markup.bold')}}
+        v-tooltip(bottom, color='primary')
+          template(v-slot:activator='{ on }')
+            v-btn.animated.fadeIn.wait-p1s(icon, tile, v-on='on', @click='wrapOrInsert({ start: `*` })').mx-0
+              v-icon mdi-format-italic
+          span {{$t('editor:markup.italic')}}
+        v-tooltip(bottom, color='primary')
+          template(v-slot:activator='{ on }')
+            v-btn.animated.fadeIn.wait-p1s(icon, tile, v-on='on', @click='wrapOrInsert({ start: `_` })').mx-0
+              v-icon mdi-format-underline
+          span Underline
+        v-tooltip(bottom, color='primary')
+          template(v-slot:activator='{ on }')
+            v-btn.animated.fadeIn.wait-p1s(icon, tile, v-on='on', @click='wrapOrInsert({ start: `~~` })').mx-0
+              v-icon mdi-format-strikethrough
+          span {{$t('editor:markup.strikethrough')}}
+        v-divider(inset vertical).animated.fadeIn.wait-p1s
+        v-tooltip(bottom, color='primary')
+          template(v-slot:activator='{ on }')
+            v-btn.animated.fadeIn.wait-p2s(icon, tile, v-on='on', @click='wrapOrInsert({ start: `~` })').mx-0
               v-icon mdi-format-subscript
           span {{$t('editor:markup.subscript')}}
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p5s(icon, tile, v-on='on', @click='toggleMarkup({ start: `^` })').mx-0
+            v-btn.animated.fadeIn.wait-p2s(icon, tile, v-on='on', @click='wrapOrInsert({ start: `^` })').mx-0
               v-icon mdi-format-superscript
           span {{$t('editor:markup.superscript')}}
+        v-divider(inset vertical).animated.fadeIn.wait-p2s
+        v-tooltip(bottom, color='primary')
+          template(v-slot:activator='{ on }')
+            v-btn.animated.fadeIn.wait-p3s(icon, tile, v-on='on', @click='toggleMarkup({ start: `==`, attrs: [`.marker-yellow`] })').mx-0
+              v-icon mdi-format-color-highlight
+          span Highlight
+        v-divider(inset vertical).animated.fadeIn.wait-p3s
         v-menu(offset-y, open-on-hover)
           template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p6s(icon, tile, v-on='on').mx-0
+            v-btn.animated.fadeIn.wait-p4s(icon, tile, v-on='on').mx-0
               v-icon mdi-alpha-t-box-outline
           v-list.py-0
             v-list-item(@click='insertBeforeEachLine({ content: `> `})')
@@ -83,9 +102,10 @@
                 v-icon(color='purple') mdi-alpha-g-box-outline
               v-list-item-title Game Card
             v-divider
+        v-divider(inset vertical).animated.fadeIn.wait-p4s
         v-menu(offset-y, open-on-hover)
           template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p6s(icon, tile, v-on='on').mx-0
+            v-btn.animated.fadeIn.wait-p5s(icon, tile, v-on='on').mx-0
               v-icon mdi-format-list-bulleted
           v-list.py-0
             v-list-item(@click='insertBeforeEachLine({ content: `- `})')
@@ -105,34 +125,40 @@
             v-divider
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p8s(icon, tile, v-on='on', @click='insertBeforeEachLine({ content: `1. `})').mx-0
+            v-btn.animated.fadeIn.wait-p5s(icon, tile, v-on='on', @click='insertBeforeEachLine({ content: `1. `})').mx-0
               v-icon mdi-format-list-numbered
           span {{$t('editor:markup.orderedList')}}
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p9s(icon, tile, v-on='on', @click='toggleMarkup({ start: "`" })').mx-0
+            v-btn.animated.fadeIn.wait-p5s(icon, tile, v-on='on', @click='insertBeforeEachLine({ content: `- [ ] `})').mx-0
+              v-icon mdi-format-list-checks
+          span To-do List
+        v-divider(inset vertical).animated.fadeIn.wait-p5s
+        v-tooltip(bottom, color='primary')
+          template(v-slot:activator='{ on }')
+            v-btn.animated.fadeIn.wait-p6s(icon, tile, v-on='on', @click='wrapOrInsert({ start: "`" })').mx-0
               v-icon mdi-code-tags
           span {{$t('editor:markup.inlineCode')}}
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p10s(icon, tile, v-on='on', @click='toggleMarkup({ start: `<kbd>`, end: `</kbd>` })').mx-0
+            v-btn.animated.fadeIn.wait-p6s(icon, tile, v-on='on', @click='toggleMarkup({ start: `<kbd>`, end: `</kbd>` })').mx-0
               v-icon mdi-keyboard-variant
           span {{$t('editor:markup.keyboardKey')}}
         v-tooltip(bottom, color='primary')
           template(v-slot:activator='{ on }')
-            v-btn.animated.fadeIn.wait-p11s(icon, tile, v-on='on', @click='insertAfter({ content: `---`, newLine: true })').mx-0
+            v-btn.animated.fadeIn.wait-p6s(icon, tile, v-on='on', @click='insertAfter({ content: `---`, newLine: true })').mx-0
               v-icon mdi-minus
           span {{$t('editor:markup.horizontalBar')}}
         template(v-if='$vuetify.breakpoint.mdAndUp')
           v-spacer
           v-tooltip(bottom, color='primary', v-if='previewShown')
             template(v-slot:activator='{ on }')
-              v-btn.animated.fadeIn.wait-p1s(icon, tile, v-on='on', @click='spellModeActive = !spellModeActive').mx-0
+              v-btn.animated.fadeIn.wait-p7s(icon, tile, v-on='on', @click='spellModeActive = !spellModeActive').mx-0
                 v-icon(:color='spellModeActive ? `amber` : `white`') mdi-spellcheck
             span {{$t('editor:markup.toggleSpellcheck')}}
           v-tooltip(bottom, color='primary')
             template(v-slot:activator='{ on }')
-              v-btn.animated.fadeIn.wait-p2s(icon, tile, v-on='on', @click='previewShown = !previewShown').mx-0
+              v-btn.animated.fadeIn.wait-p7s(icon, tile, v-on='on', @click='previewShown = !previewShown').mx-0
                 v-icon mdi-book-open-outline
             span {{$t('editor:markup.togglePreviewPane')}}
     .editor-markdown-main
@@ -250,6 +276,7 @@ import './markdown/fold'
 // Markdown-it
 import MarkdownIt from 'markdown-it'
 import mdAttrs from 'markdown-it-attrs'
+import mdBracketSpan from 'markdown-it-bracketed-spans'
 import mdEmoji from 'markdown-it-emoji'
 import mdTaskLists from 'markdown-it-task-lists'
 import mdExpandTabs from 'markdown-it-expand-tabs'
@@ -314,6 +341,7 @@ const md = new MarkdownIt({
   .use(mdAttrs, {
     allowedAttributes: ['id', 'class', 'target']
   })
+  .use(mdBracketSpan)
   .use(underline)
   .use(mdEmoji)
   .use(mdTaskLists, {label: true, labelAfter: true})
@@ -520,9 +548,13 @@ export default {
     },
     /**
      * Wrap selection with start / end tags
+     * @param  {string} options.start Start tag text
+     * @param  {string} options.end   End tag text
+     * @param  {Array(String)} options.attrs HTML attributes to apply
      */
-    toggleMarkup({ start, end }) {
+    toggleMarkup({ start, end, attrs }) {
       if (!end) { end = start }
+      if (attrs) { end = end + '{' + attrs.join(' ') + '}' }
       if (!this.cm.doc.somethingSelected()) {
         return this.$store.commit('showNotification', {
           message: this.$t('editor:markup.noSelectionError'),
@@ -542,7 +574,9 @@ export default {
       if (_.startsWith(lineContent, '#')) {
         lineContent = lineContent.replace(/^(#+ )/, '')
       }
-      lineContent = _.times(lvl, n => '#').join('') + ` ` + lineContent
+      if (lvl > 0) {
+        lineContent = _.times(lvl, n => '#').join('') + ` ` + lineContent
+      }
       this.cm.doc.replaceRange(lineContent, { line: curLine, ch: 0 }, { line: curLine, ch: lineLength })
     },
     /**
@@ -565,6 +599,19 @@ export default {
     insertAtCursor({ content }) {
       const cursor = this.cm.doc.getCursor('head')
       this.cm.doc.replaceRange(content, cursor)
+    },
+    /**
+     * Wrap selection with start / end tags, or insert start tag at cursor if no selection
+     * @param  {string} options.start Start tag text
+     * @param  {string} options.end   End tag text
+     * @param  {Array(String)} options.attrs HTML attributes to apply
+     */
+    wrapOrInsert({ start, end, attrs }) {
+      if (!this.cm.doc.somethingSelected()) {
+        this.insertAtCursor( { content: start } )
+      } else {
+        this.toggleMarkup( {start: start, end: end, attrs: attrs} )
+      }
     },
     /**
      * Insert content after current line
@@ -830,11 +877,11 @@ export default {
       return false
     })
     _.set(keyBindings, `${CtrlKey}-B`, c => {
-      this.toggleMarkup({ start: `**` })
+      this.wrapOrInsert({ start: `**` })
       return false
     })
     _.set(keyBindings, `${CtrlKey}-I`, c => {
-      this.toggleMarkup({ start: `*` })
+      this.wrapOrInsert({ start: `*` })
       return false
     })
     _.set(keyBindings, `${CtrlKey}-Alt-Right`, c => {
@@ -847,6 +894,38 @@ export default {
       let lvl = this.getHeaderLevel(c)
       if (lvl <= 1) { lvl = 2 }
       this.setHeaderLine(lvl - 1)
+      return false
+    })
+    _.set(keyBindings, '[', c => {
+      this.wrapOrInsert({ start: '[', end: ']' })
+      return false
+    })
+    _.set(keyBindings, 'Shift-9', c => {
+      this.wrapOrInsert({ start: '(', end: ')' })
+      return false
+    })
+    _.set(keyBindings, 'Shift-[', c => {
+      this.wrapOrInsert({ start: '{', end: '}' })
+      return false
+    })
+    _.set(keyBindings, 'Shift-8', c => {
+      this.wrapOrInsert({ start: '*' })
+      return false
+    })
+    _.set(keyBindings, 'Shift--', c => {
+      this.wrapOrInsert({ start: '_' })
+      return false
+    })
+    _.set(keyBindings, '`', c => {
+      this.wrapOrInsert({ start: '`' })
+      return false
+    })
+    _.set(keyBindings, `'`, c => {
+      this.wrapOrInsert({ start: `'` })
+      return false
+    })
+    _.set(keyBindings, `Shift-'`, c => {
+      this.wrapOrInsert({ start: `"` })
       return false
     })
     this.cm.setOption('extraKeys', keyBindings)
