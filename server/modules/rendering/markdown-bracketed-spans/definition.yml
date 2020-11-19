@@ -1,8 +1,0 @@
-key: markdownBracketedSpan
-title: Bracketed Spans
-description: Wrap bracketed texts in span tags with attributes.
-author: aurule
-icon: mdi-code-brackets
-enabledDefault: true
-dependsOn: markdownCore
-props: {}
