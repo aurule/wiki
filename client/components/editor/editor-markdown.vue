@@ -877,11 +877,15 @@ export default {
       return false
     })
     _.set(keyBindings, `${CtrlKey}-B`, c => {
-      this.wrapOrInsert({ start: `**` })
+      this.wrapOrInsert({ start: '**' })
       return false
     })
     _.set(keyBindings, `${CtrlKey}-I`, c => {
-      this.wrapOrInsert({ start: `*` })
+      this.wrapOrInsert({ start: '*' })
+      return false
+    })
+    _.set(keyBindings, `${CtrlKey}-U`, c => {
+      this.wrapOrInsert({ start: '_' })
       return false
     })
     _.set(keyBindings, `${CtrlKey}-Alt-Right`, c => {
@@ -898,35 +902,27 @@ export default {
     })
     _.set(keyBindings, '[', c => {
       this.wrapOrInsert({ start: '[', end: ']' })
-      return false
     })
     _.set(keyBindings, 'Shift-9', c => {
       this.wrapOrInsert({ start: '(', end: ')' })
-      return false
     })
     _.set(keyBindings, 'Shift-[', c => {
       this.wrapOrInsert({ start: '{', end: '}' })
-      return false
     })
     _.set(keyBindings, 'Shift-8', c => {
       this.wrapOrInsert({ start: '*' })
-      return false
     })
     _.set(keyBindings, 'Shift--', c => {
       this.wrapOrInsert({ start: '_' })
-      return false
     })
     _.set(keyBindings, '`', c => {
       this.wrapOrInsert({ start: '`' })
-      return false
     })
-    _.set(keyBindings, `'`, c => {
-      this.wrapOrInsert({ start: `'` })
-      return false
+    _.set(keyBindings, '\'', c => {
+      this.wrapOrInsert({ start: '\'' })
     })
-    _.set(keyBindings, `Shift-'`, c => {
-      this.wrapOrInsert({ start: `"` })
-      return false
+    _.set(keyBindings, 'Shift-\'', c => {
+      this.wrapOrInsert({ start: '"' })
     })
     this.cm.setOption('extraKeys', keyBindings)
 
