@@ -271,6 +271,7 @@ import 'codemirror/addon/hint/show-hint.js'
 import 'codemirror/addon/fold/foldcode.js'
 import 'codemirror/addon/fold/foldgutter.js'
 import 'codemirror/addon/fold/foldgutter.css'
+import 'codemirror/addon/edit/continuelist.js'
 import './markdown/fold'
 
 // Markdown-it
@@ -870,7 +871,8 @@ export default {
       },
       'Esc' (c) {
         if (c.getOption('fullScreen')) c.setOption('fullScreen', false)
-      }
+      },
+      'Enter': 'newlineAndIndentContinueMarkdownList',
     }
     _.set(keyBindings, `${CtrlKey}-S`, c => {
       this.save()
