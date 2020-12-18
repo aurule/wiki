@@ -271,6 +271,7 @@ import 'codemirror/addon/hint/show-hint.js'
 import 'codemirror/addon/fold/foldcode.js'
 import 'codemirror/addon/fold/foldgutter.js'
 import 'codemirror/addon/fold/foldgutter.css'
+import 'codemirror/addon/edit/continuelist.js'
 import './markdown/fold'
 
 // Markdown-it
@@ -870,18 +871,23 @@ export default {
       },
       'Esc' (c) {
         if (c.getOption('fullScreen')) c.setOption('fullScreen', false)
-      }
+      },
+      'Enter': 'newlineAndIndentContinueMarkdownList',
     }
     _.set(keyBindings, `${CtrlKey}-S`, c => {
       this.save()
       return false
     })
     _.set(keyBindings, `${CtrlKey}-B`, c => {
-      this.wrapOrInsert({ start: `**` })
+      this.wrapOrInsert({ start: '**' })
       return false
     })
     _.set(keyBindings, `${CtrlKey}-I`, c => {
-      this.wrapOrInsert({ start: `*` })
+      this.wrapOrInsert({ start: '*' })
+      return false
+    })
+    _.set(keyBindings, `${CtrlKey}-U`, c => {
+      this.wrapOrInsert({ start: '_' })
       return false
     })
     _.set(keyBindings, `${CtrlKey}-Alt-Right`, c => {
@@ -898,35 +904,27 @@ export default {
     })
     _.set(keyBindings, '[', c => {
       this.wrapOrInsert({ start: '[', end: ']' })
-      return false
     })
     _.set(keyBindings, 'Shift-9', c => {
       this.wrapOrInsert({ start: '(', end: ')' })
-      return false
     })
     _.set(keyBindings, 'Shift-[', c => {
       this.wrapOrInsert({ start: '{', end: '}' })
-      return false
     })
     _.set(keyBindings, 'Shift-8', c => {
       this.wrapOrInsert({ start: '*' })
-      return false
     })
     _.set(keyBindings, 'Shift--', c => {
       this.wrapOrInsert({ start: '_' })
-      return false
     })
     _.set(keyBindings, '`', c => {
       this.wrapOrInsert({ start: '`' })
-      return false
     })
-    _.set(keyBindings, `'`, c => {
-      this.wrapOrInsert({ start: `'` })
-      return false
+    _.set(keyBindings, '\'', c => {
+      this.wrapOrInsert({ start: '\'' })
     })
-    _.set(keyBindings, `Shift-'`, c => {
-      this.wrapOrInsert({ start: `"` })
-      return false
+    _.set(keyBindings, 'Shift-\'', c => {
+      this.wrapOrInsert({ start: '"' })
     })
     this.cm.setOption('extraKeys', keyBindings)
 
