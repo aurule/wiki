@@ -150,6 +150,9 @@
                 v-list-item.pl-4(@click='pageSource', v-if='mode !== `source` && hasReadSourcePermission')
                   v-list-item-avatar(size='24', tile): v-icon(color='indigo') mdi-code-tags
                   v-list-item-title.body-2 {{$t('common:header.viewSource')}}
+                v-list-item.pl-4(@click='pageConvert', v-if='hasWritePagesPermission')
+                  v-list-item-avatar(size='24', tile): v-icon(color='indigo') mdi-lightning-bolt
+                  v-list-item-title.body-2 {{$t('common:header.convert')}}
                 v-list-item.pl-4(@click='pageDuplicate', v-if='hasWritePagesPermission')
                   v-list-item-avatar(size='24', tile): v-icon(color='indigo') mdi-content-duplicate
                   v-list-item-title.body-2 {{$t('common:header.duplicate')}}
@@ -243,10 +246,11 @@
                 v-icon(color='grey') mdi-account-circle
             span {{$t('common:header.login')}}
 
-    page-selector(mode='create', v-model='newPageOpts.modal', :open-handler='pageNewCreate', :path='newPageOpts.path', :locale='newPageOpts.locale')
+    page-selector(mode='create', v-model='newPageModal', :open-handler='pageNewCreate', :locale='locale')
     page-selector(mode='move', v-model='movePageModal', :open-handler='pageMoveRename', :path='path', :locale='locale')
     page-selector(mode='create', v-model='duplicateOpts.modal', :open-handler='pageDuplicateHandle', :path='duplicateOpts.path', :locale='duplicateOpts.locale')
     page-delete(v-model='deletePageModal', v-if='path && path.length')
+    page-convert(v-model='convertPageModal', v-if='path && path.length')
 
     .nav-header-dev(v-if='isDevMode')
       v-icon mdi-alert
@@ -268,6 +272,7 @@ import movePageMutation from 'gql/common/common-pages-mutation-move.gql'
 export default {
   components: {
     PageDelete: () => import('./page-delete.vue'),
+    PageConvert: () => import('./page-convert.vue'),
     AnnounceKit
   },
   props: {
@@ -285,16 +290,13 @@ export default {
       menuIsShown: true,
       searchIsShown: true,
       searchAdvMenuShown: false,
+      newPageModal: false,
       movePageModal: false,
+      convertPageModal: false,
       deletePageModal: false,
       locales: siteLangs,
       isDevMode: false,
       duplicateOpts: {
-        locale: 'en',
-        path: 'new-page',
-        modal: false
-      },
-      newPageOpts: {
         locale: 'en',
         path: 'new-page',
         modal: false
@@ -371,6 +373,9 @@ export default {
     this.$root.$on('pageMove', () => {
       this.pageMove()
     })
+    this.$root.$on('pageConvert', () => {
+      this.pageConvert()
+    })
     this.$root.$on('pageDuplicate', () => {
       this.pageDuplicate()
     })
@@ -405,11 +410,7 @@ export default {
       this.$root.$emit('searchMove', dir)
     },
     pageNew () {
-      this.newPageOpts = {
-        locale: this.locale,
-        path: this.path + `/new-page`,
-        modal: true
-      }
+      this.newPageModal = true
     },
     pageNewCreate ({ path, locale }) {
       window.location.assign(`/e/${locale}/${path}`)
@@ -436,6 +437,9 @@ export default {
     },
     pageDuplicateHandle ({ locale, path }) {
       window.location.assign(`/e/${locale}/${path}?from=${this.$store.get('page/id')}`)
+    },
+    pageConvert () {
+      this.convertPageModal = true
     },
     pageMove () {
       this.movePageModal = true
