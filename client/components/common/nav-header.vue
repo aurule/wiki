@@ -184,6 +184,7 @@
                   v-icon(color='grey') mdi-bell
                   <AnnounceKit catchClick=".ak-trigger" widget="https://announcekit.app/widgets/v2/1PAiw8" />
               span Announcements
+            v-divider(vertical)
 
           //- ADMIN
 
