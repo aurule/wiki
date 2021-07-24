@@ -7,11 +7,11 @@
     }
     ul {
       > li::before {
-        content: '\25cf'
+        content: '\2022'
       }
       ul {
         > li::before {
-          content: '\25a0'
+          content: '\ffed'
         }
         ul {
           > li::before {
