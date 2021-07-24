@@ -14,6 +14,16 @@
           background-color: mc('grey', '100');
         }
       }
+
+      @at-root .theme--dark & {
+        background-color: mc('grey', '900');
+
+        tr:nth-child(even) {
+          td {
+            background-color: lighten(mc('grey', '900'), 5%);
+          }
+        }
+      }
     }
 
     // fancy gradient underline for table caption
