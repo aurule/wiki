@@ -18,7 +18,7 @@
       a.is-internal-link {
         text-decoration: none;
         position: relative;
-        color: unset;
+        color: mc('purple', '400');
         &:hover {
           text-decoration: underline;
           color: mc('purple', '300');
@@ -33,7 +33,7 @@
 
     @at-root .theme--dark & {
       background-color: mc('purple', '900');
-      border-color: mc('purple', '500');
+      border-color: mc('purple', '400');
     }
   }
 }
