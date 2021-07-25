@@ -1,0 +1,23 @@
+/* Styling for example boxes */
+
+.v-main .contents {
+  blockquote.is-aside {
+    background-color: mc('blue-grey', '50');
+    border: 1px solid mc('blue', '600');
+    color: reset;
+    float: right;
+    width: 30%;
+    margin: 0 0 1rem 1rem;
+    z-index: 1;
+    position: relative;
+
+    &::before {
+      content: none;
+    }
+
+    @at-root .theme--dark & {
+      background-color: lighten(mc('grey', '900'), 5%);
+      border-color: mc('blue', '300');
+    }
+  }
+}

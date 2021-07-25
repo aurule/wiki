@@ -1,0 +1,12 @@
+/* Styling for example boxes */
+
+.v-main .contents {
+  blockquote p cite {
+    font-style: italic;
+    margin-left: 1em;
+
+    &::before {
+      content: "~ ";
+    }
+  }
+}
