@@ -29,14 +29,16 @@ module.exports = {
         authJwtExpiration: WIKI.config.auth.tokenExpiration,
         authJwtRenewablePeriod: WIKI.config.auth.tokenRenewal,
         uploadMaxFileSize: WIKI.config.uploads.maxFileSize,
-        uploadMaxFiles: WIKI.config.uploads.maxFiles
+        uploadMaxFiles: WIKI.config.uploads.maxFiles,
+        uploadScanSVG: WIKI.config.uploads.scanSVG,
+        uploadForceDownload: WIKI.config.uploads.forceDownload
       }
     }
   },
   SiteMutation: {
     async updateConfig(obj, args, context) {
       try {
-        if (args.host) {
+        if (args.hasOwnProperty('host')) {
           let siteHost = _.trim(args.host)
           if (siteHost.endsWith('/')) {
             siteHost = siteHost.slice(0, -1)
@@ -44,19 +46,19 @@ module.exports = {
           WIKI.config.host = siteHost
         }
 
-        if (args.title) {
+        if (args.hasOwnProperty('title')) {
           WIKI.config.title = _.trim(args.title)
         }
 
-        if (args.company) {
+        if (args.hasOwnProperty('company')) {
           WIKI.config.company = _.trim(args.company)
         }
 
-        if (args.contentLicense) {
+        if (args.hasOwnProperty('contentLicense')) {
           WIKI.config.contentLicense = args.contentLicense
         }
 
-        if (args.logoUrl) {
+        if (args.hasOwnProperty('logoUrl')) {
           WIKI.config.logoUrl = _.trim(args.logoUrl)
         }
 
@@ -97,7 +99,9 @@ module.exports = {
 
         WIKI.config.uploads = {
           maxFileSize: _.get(args, 'uploadMaxFileSize', WIKI.config.uploads.maxFileSize),
-          maxFiles: _.get(args, 'uploadMaxFiles', WIKI.config.uploads.maxFiles)
+          maxFiles: _.get(args, 'uploadMaxFiles', WIKI.config.uploads.maxFiles),
+          scanSVG: _.get(args, 'uploadScanSVG', WIKI.config.uploads.scanSVG),
+          forceDownload: _.get(args, 'uploadForceDownload', WIKI.config.uploads.forceDownload)
         }
 
         await WIKI.configSvc.saveToDb(['host', 'title', 'company', 'contentLicense', 'seo', 'logoUrl', 'auth', 'features', 'security', 'uploads'])

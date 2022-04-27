@@ -4,14 +4,13 @@
 
 [![Release](https://img.shields.io/github/release/Requarks/wiki.svg?style=flat&maxAge=3600)](https://github.com/Requarks/wiki/releases)
 [![License](https://img.shields.io/badge/license-AGPLv3-blue.svg?style=flat)](https://github.com/requarks/wiki/blob/master/LICENSE)
-[![Backers on Open Collective](https://opencollective.com/wikijs/all/badge.svg)](https://opencollective.com/wikijs)
-[![Downloads](https://img.shields.io/github/downloads/Requarks/wiki/total.svg?style=flat)](https://github.com/Requarks/wiki/releases)
-[![Docker Pulls](https://img.shields.io/docker/pulls/requarks/wiki.svg)](https://hub.docker.com/r/requarks/wiki/)  
-[![Build status](https://dev.azure.com/requarks/wiki/_apis/build/status/build)](https://dev.azure.com/requarks/wiki/_build/latest?definitionId=9)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=wiki&metric=alert_status)](https://sonarcloud.io/dashboard?id=wiki)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=wiki&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=wiki)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=wiki&metric=security_rating)](https://sonarcloud.io/dashboard?id=wiki)
-[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)  
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-green.svg?style=flat&logo=javascript&logoColor=white)](http://standardjs.com/)
+[![Downloads](https://img.shields.io/github/downloads/Requarks/wiki/total.svg?style=flat&logo=github)](https://github.com/Requarks/wiki/releases)
+[![Docker Pulls](https://img.shields.io/docker/pulls/requarks/wiki.svg?logo=docker&logoColor=white)](https://hub.docker.com/r/requarks/wiki/)  
+[![Build + Publish](https://github.com/Requarks/wiki/actions/workflows/build.yml/badge.svg)](https://github.com/Requarks/wiki/actions/workflows/build.yml)
+[![Huntr](https://img.shields.io/badge/security%20bounty-disclose-brightgreen.svg?style=flat&logo=cachet&logoColor=white)](https://huntr.dev/bounties/disclose)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/ngpixel?logo=github&color=ea4aaa)](https://github.com/users/NGPixel/sponsorship)
+[![Open Collective backers and sponsors](https://img.shields.io/opencollective/all/wikijs?label=backers&color=218bff&logo=opencollective&logoColor=white)](https://opencollective.com/wikijs)  
 [![Chat on Slack](https://img.shields.io/badge/slack-requarks-CC2B5E.svg?style=flat&logo=slack)](https://wiki.requarks.io/slack)
 [![Twitter Follow](https://img.shields.io/badge/follow-%40requarks-blue.svg?style=flat&logo=twitter)](https://twitter.com/requarks)
 [![Reddit](https://img.shields.io/badge/reddit-%2Fr%2Fwikijs-orange?logo=reddit&logoColor=white)](https://www.reddit.com/r/wikijs/)
@@ -26,7 +25,7 @@
 - [Requirements](https://docs.requarks.io/install/requirements)
 - [Installation](https://docs.requarks.io/install)
 - [Demo](https://docs.requarks.io/demo)
-- [Change Log](https://docs.requarks.io/releases)
+- [Changelog](https://docs.requarks.io/releases)
 - [Feature Requests](https://feedback.js.wiki/wiki)
 - [Chat with us on Slack](https://wiki.requarks.io/slack)
 - [Translations](https://docs.requarks.io/dev/translations) *(We need your help!)*
@@ -52,6 +51,22 @@ Wiki.js is an open source project that has been made possible due to the generou
 
 </div>
 
+<h2 align="center">Gold Tier Sponsors</h2>
+
+<div align="center">
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="middle" width="444">
+        <a href="https://trans-zero.com/" target="_blank">
+          <img src="https://cdn.js.wiki/images/sponsors/transzero.png">
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 <h2 align="center">GitHub Sponsors</h2>
 
 Support this project by becoming a sponsor. Your name will show up in the Contribute page of all Wiki.js installations as well as here with a link to your website! [[Become a sponsor](https://github.com/users/NGPixel/sponsorship)]
@@ -60,9 +75,33 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
 <table>
   <tbody>
     <tr>
+      <td align="center" valign="middle" width="444">
+        <a href="https://www.stellarhosted.com/" target="_blank">
+          <img src="https://cdn.js.wiki/images/sponsors/stellarhosted.png">
+        </a>
+      </td>
+      <td align="center" valign="middle" width="444">
+        <a href="https://www.hostwiki.com/" target="_blank">
+          <img src="https://cdn.js.wiki/images/sponsors/hostwiki.png">
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div align="center">
+<table>
+  <tbody>
+    <tr>
       <td align="center" valign="middle" width="148">
         <a href="https://github.com/alexksso" target="_blank">
           Alexander Casassovici<br />(@alexksso)
+        </a>
+      </td>
+      <td align="center" valign="middle" width="148">
+        <a href="https://github.com/broxen" target="_blank">
+          Broxen<br />(@broxen)
         </a>
       </td>
       <td align="center" valign="middle" width="148">
@@ -85,11 +124,6 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
           Oleksii<br />(@idokka)
         </a>
       </td>
-      <td align="center" valign="middle" width="148">
-        <a href="https://github.com/TheodoreChu" target="_blank">
-          Theodore Chu<br />(@TheodoreChu)
-        </a>
-      </td>
       <!--<td align="center" valign="middle" width="148">
         <a href="https://github.com/sponsors/NGPixel" target="_blank">
           <img src="https://static.requarks.io/sponsors/become-148x72.png">
@@ -98,10 +132,13 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
     </tr>
   </tbody>
 </table>
-</div>
+
+<table><tbody><tr><td>
+<img width="441" height="1" />
 
 - Akira Suenami ([@a-suenami](https://github.com/a-suenami))
 - Arnaud Marchand ([@snuids](https://github.com/snuids))
+- Brian Douglass ([@bhdouglass](https://github.com/bhdouglass))
 - Bryon Vandiver ([@asterick](https://github.com/asterick))
 - Cameron Steele ([@ATechAdventurer](https://github.com/ATechAdventurer))
 - Cloud Data Hosting LLC ([@CloudDataHostingLLC](https://github.com/CloudDataHostingLLC))
@@ -110,14 +147,24 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
 - Dragan Espenschied ([@despens](https://github.com/despens))
 - Elijah Zobenko ([@he110](https://github.com/he110))
 - Ernie ([@iamernie](https://github.com/iamernie))
+- Fabio Ferrari ([@devxops](https://github.com/devxops))
+- Finsa S.p.A. ([@finsaspa](https://github.com/finsaspa))
 - Florian Moss ([@florianmoss](https://github.com/florianmoss))
+- GoodCorporateCitizen ([@GoodCorporateCitizen](https://github.com/GoodCorporateCitizen))
 - HeavenBay ([@HeavenBay](https://github.com/heavenbay))
+- Ian Hyzy ([@ianhyzy](https://github.com/ianhyzy))
 - Jaimyn Mayer ([@jabelone](https://github.com/jabelone))
 - Jay Lee ([@polyglotm](https://github.com/polyglotm))
 - Kelly Wardrop ([@dropcoded](https://github.com/dropcoded))
 - Loki ([@binaryloki](https://github.com/binaryloki))
+- MaFarine ([@MaFarine](https://github.com/MaFarine))
 - Marcilio Leite Neto ([@marclneto](https://github.com/marclneto))
+        
+</td><td>
+<img width="441" height="1" />
+        
 - Mattias Johnson ([@mattiasJohnson](https://github.com/mattiasJohnson))
+- Max Ricketts-Uy ([@MaxRickettsUy](https://github.com/MaxRickettsUy))
 - Mitchell Rowton ([@mrowton](https://github.com/mrowton))
 - M. Scott Ford ([@mscottford](https://github.com/mscottford))
 - Nick Halase ([@nhalase](https://github.com/nhalase))
@@ -125,16 +172,24 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
 - Noel Cower ([@nilium](https://github.com/nilium))
 - Philipp Schmitt ([@pschmitt](https://github.com/pschmitt))
 - Robert Lanzke ([@winkelement](https://github.com/winkelement))
-- Sam Martin ([@winkelement](https://github.com/ABitMoreDepth))
+- Sam Martin ([@ABitMoreDepth](https://github.com/ABitMoreDepth))
 - Sean Coffey ([@seanecoffey](https://github.com/seanecoffey))
+- Stephan Kristyn ([@stevek-pro](https://github.com/stevek-pro))
+- Theodore Chu ([@TheodoreChu](https://github.com/TheodoreChu))
+- Tyler Denman ([@tylerguy](https://github.com/tylerguy))
 - Victor Bilgin ([@vbilgin](https://github.com/vbilgin))
 - VMO Solutions ([@vmosolutions](https://github.com/vmosolutions))
 - aniketpanjwani ([@aniketpanjwani](https://github.com/aniketpanjwani))
 - aytaa ([@aytaa](https://github.com/aytaa))
+- chaee ([@chaee](https://github.com/chaee))
 - magicpotato ([@fortheday](https://github.com/fortheday))
 - motoacs ([@motoacs](https://github.com/motoacs))
+- rburckner ([@rburckner](https://github.com/rburckner))
 - scorpion ([@scorpion](https://github.com/scorpion))
 - valantien ([@valantien](https://github.com/valantien))
+        
+</td></tr></tbody></table>
+</div>
 
 <h2 align="center">OpenCollective Sponsors</h2>
 
@@ -144,87 +199,139 @@ Support this project by becoming a sponsor. Your logo will show up in the Contri
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/0/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/0/avatar.svg"></a>
       </td>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/1/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/1/avatar.svg"></a>
       </td>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/2/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/2/avatar.svg"></a>
       </td>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/3/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/3/avatar.svg"></a>
       </td>
-    </tr>
-    <tr>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/4/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/4/avatar.svg"></a>
       </td>
-      <td align="center" valign="middle" width="192">
+    </tr>
+    <tr>
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/5/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/5/avatar.svg"></a>
       </td>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/6/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/6/avatar.svg"></a>
       </td>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/7/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/7/avatar.svg"></a>
       </td>
-    </tr>
-    <tr>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/8/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/8/avatar.svg"></a>
       </td>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/9/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/9/avatar.svg"></a>
       </td>
-      <td align="center" valign="middle" width="192">
+    </tr>
+    <tr>
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/10/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/10/avatar.svg"></a>
       </td>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/11/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/11/avatar.svg"></a>
       </td>
-    </tr>
-    <tr>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/12/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/12/avatar.svg"></a>
       </td>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/13/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/13/avatar.svg"></a>
       </td>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/14/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/14/avatar.svg"></a>
-      </td>
-      <td align="center" valign="middle" width="192">
-        <a href="https://opencollective.com/wikijs/sponsor/15/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/15/avatar.svg"></a>
       </td>
     </tr>
     <tr>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/15/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/15/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/16/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/16/avatar.svg"></a>
       </td>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/17/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/17/avatar.svg"></a>
       </td>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/18/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/18/avatar.svg"></a>
       </td>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/19/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/19/avatar.svg"></a>
       </td>
     </tr>
     <tr>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/20/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/20/avatar.svg"></a>
       </td>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/21/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/21/avatar.svg"></a>
       </td>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/22/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/22/avatar.svg"></a>
       </td>
-      <td align="center" valign="middle" width="192">
+      <td align="center" valign="middle">
         <a href="https://opencollective.com/wikijs/sponsor/23/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/23/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/24/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/24/avatar.svg"></a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/25/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/25/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/26/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/26/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/27/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/27/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/28/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/28/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/29/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/29/avatar.svg"></a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/30/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/30/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/31/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/31/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/32/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/32/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/33/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/33/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/34/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/34/avatar.svg"></a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/35/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/35/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/36/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/36/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/37/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/37/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/38/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/38/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/39/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/39/avatar.svg"></a>
       </td>
     </tr>
   </tbody>
@@ -235,7 +342,10 @@ Support this project by becoming a sponsor. Your logo will show up in the Contri
 
 Thank you to all our patrons! 🙏 [[Become a patron](https://www.patreon.com/requarks)]
 
-<!--5 start-->
+<div align="center">
+<table><tbody><tr><td>
+<img width="441" height="1" />
+
 - Al Romano
 - Alex Balabanov
 - Alex Zen
@@ -243,6 +353,7 @@ Thank you to all our patrons! 🙏 [[Become a patron](https://www.patreon.com/re
 - Brandon Curtis
 - Dave 'Sri' Seah
 - djagoo
+- dz
 - Douglas Lassance
 - Ernie Reid
 - Etienne
@@ -252,6 +363,10 @@ Thank you to all our patrons! 🙏 [[Become a patron](https://www.patreon.com/re
 - hong
 - Hope
 - Ian
+  
+</td><td>
+<img width="441" height="1" />
+
 - Iskander Callos
 - Josh Stewart
 - Justin Dunsworth
@@ -264,11 +379,14 @@ Thank you to all our patrons! 🙏 [[Become a patron](https://www.patreon.com/re
 - Philipp Schürch
 - Tracey Duffy
 - Richeir
+- Shad Narcher
 - SmartNET.works
 - Stepan Sokolovskyi
 - Zach Maynard
 - 张白驹
-<!--5 end-->
+
+</td></tr></tbody></table>
+</div>
 
 <h2 align="center">OpenCollective Backers</h2>
 
@@ -283,16 +401,16 @@ This project exists thanks to all the people who contribute. [[Contribute]](http
 
 <h2 align="center">Special Thanks</h2>
 
-![Algolia](https://wiki.js.org/legacy/logo_algolia.png)  
+![Algolia](https://js.wiki/legacy/logo_algolia.png)  
 [Algolia](https://www.algolia.com/) for providing access to their incredible search engine.
 
-![Browserstack](https://wiki.js.org/legacy/logo_browserstack.png)  
+![Browserstack](https://js.wiki/legacy/logo_browserstack.png)  
 [Browserstack](https://www.browserstack.com/) for providing access to their great cross-browser testing tools.
 
-![Cloudflare](https://wiki.js.org/legacy/logo_cloudflare.png)  
+![Cloudflare](https://js.wiki/legacy/logo_cloudflare.png)  
 [Cloudflare](https://www.cloudflare.com/) for providing their great CDN, SSL and advanced networking services.
 
-![DigitalOcean](https://wiki.js.org/legacy/logo_digitalocean.png)  
+![DigitalOcean](https://js.wiki/legacy/logo_digitalocean.png)  
 [DigitalOcean](https://m.do.co/c/5f7445bfa4d0) for providing hosting of the Wiki.js documentation site.
 
 ![Icons8](https://static.requarks.io/logo/icons8-text-h40.png)  
@@ -301,8 +419,11 @@ This project exists thanks to all the people who contribute. [[Contribute]](http
 ![Lokalise](https://static.requarks.io/logo/lokalise-text-h40.png)  
 [Lokalise](https://lokalise.com/) for providing access to their great localization tool.
 
-![Netlify](https://wiki.js.org/legacy/logo_netlify.png)  
+![Netlify](https://js.wiki/legacy/logo_netlify.png)  
 [Netlify](https://www.netlify.com) for providing hosting for landings and blog websites.
+
+![ngrok](https://static.requarks.io/logo/ngrok-h40.png)  
+[ngrok](https://ngrok.com) for providing access to their great HTTP tunneling services.
 
 ![Porkbun](https://static.requarks.io/logo/porkbun.png)  
 [Porkbun](https://www.porkbun.com) for providing domain registration services.
