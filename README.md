@@ -141,6 +141,7 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
 - Brian Douglass ([@bhdouglass](https://github.com/bhdouglass))
 - Bryon Vandiver ([@asterick](https://github.com/asterick))
 - Cameron Steele ([@ATechAdventurer](https://github.com/ATechAdventurer))
+- Charlie Schliesser ([@charlie-s](https://github.com/charlie-s))
 - Cloud Data Hosting LLC ([@CloudDataHostingLLC](https://github.com/CloudDataHostingLLC))
 - CrazyMarvin ([@CrazyMarvin](https://github.com/CrazyMarvin))
 - David Christian Holin ([@SirGibihm](https://github.com/SirGibihm))
@@ -159,15 +160,17 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
 - Loki ([@binaryloki](https://github.com/binaryloki))
 - MaFarine ([@MaFarine](https://github.com/MaFarine))
 - Marcilio Leite Neto ([@marclneto](https://github.com/marclneto))
+- Mattias Johnson ([@mattiasJohnson](https://github.com/mattiasJohnson))
         
 </td><td>
 <img width="441" height="1" />
         
-- Mattias Johnson ([@mattiasJohnson](https://github.com/mattiasJohnson))
 - Max Ricketts-Uy ([@MaxRickettsUy](https://github.com/MaxRickettsUy))
+- Mickael Asseline ([@PAPAMICA](https://github.com/PAPAMICA))
 - Mitchell Rowton ([@mrowton](https://github.com/mrowton))
 - M. Scott Ford ([@mscottford](https://github.com/mscottford))
 - Nick Halase ([@nhalase](https://github.com/nhalase))
+- Nick Price ([@DominoTree](https://github.com/DominoTree))
 - Nina Reynolds ([@cutecycle](https://github.com/cutecycle))
 - Noel Cower ([@nilium](https://github.com/nilium))
 - Philipp Schmitt ([@pschmitt](https://github.com/pschmitt))
