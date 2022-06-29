@@ -1,0 +1,106 @@
+/* Styling for example boxes */
+
+.v-main .contents {
+  .timeline {
+    text-align: left;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    .wrapper-timeline {
+      position: relative;
+    }
+
+    .year {
+      padding: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      margin: 5px;
+    }
+    .break {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10px 0;
+      .title {
+        padding: 10px;
+        margin: 0;
+        font-weight: bold;
+        font-size: 18px;
+        background-color: #fff;
+        border-radius: 15px;
+        z-index: 1;
+
+        @at-root .theme--dark & {
+          background-color: mc('grey', '900');
+        }
+      }
+      .line {
+        position: absolute;
+        z-index: 0;
+        height: 1px;
+        width: 100%;
+        background:
+          radial-gradient(
+            circle,
+            rgba(97, 97, 97, 1) 0%,
+            rgba(97, 97, 97, 0) 100%
+          );
+      }
+    }
+
+    .wrapper-item {
+      display: grid;
+      grid-template-columns: 1fr 5px 1fr;
+      margin-bottom: 0;
+      .divider {
+        /* background-color: #ccd5db; */
+        background-color: rgb(236, 239, 241);
+        // background-color: mc('grey', '900');
+
+        @at-root .theme--dark & {
+          background-color: rgb(136, 139, 141);
+        }
+
+        .dot {
+          display: block;
+          position: relative;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          left: -5px;
+          top: 26px;
+          /* background-color: #2da1bf; */
+          background-color: rgb(30, 136, 229);
+        }
+      }
+      .year-item {
+        margin-top: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      .timeline-item {
+        .item {
+          padding: 20px 0 20px 15px;
+          position: relative;
+        }
+        .item-date {
+          margin: 0;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+        .item-title {
+          margin: 0;
+          padding: 5px 0;
+        }
+        .item-description {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
