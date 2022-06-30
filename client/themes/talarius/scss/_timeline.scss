@@ -79,6 +79,10 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-end;
+
+        &.right {
+          align-items: flex-start;
+        }
       }
 
       .timeline-item {
