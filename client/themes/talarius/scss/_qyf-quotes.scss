@@ -3,12 +3,14 @@
 .v-main .contents {
   blockquote.is-multiquote {
     background-color: rgb(236, 239, 241);
-    /* background-color: rgb(46, 46, 46); */
     display: block;
     border-left: 2px solid rgb(30, 136, 229);
-    /* border-left: 2px solid rgb(100, 181, 246); */
     padding: 10px 0 10px 10px;
     border-radius: 8px;
+
+    &::before {
+      content: none;
+    }
 
     @at-root .theme--dark & {
       background-color: rgb(46, 46, 46);
