@@ -192,35 +192,39 @@ module.exports = class Page extends Model {
    */
   static parseMetadata (raw, contentType) {
     let result
-    switch (contentType) {
-      case 'markdown':
-        result = frontmatterRegex.markdown.exec(raw)
-        if (result[2]) {
-          return {
-            ...yaml.safeLoad(result[2]),
-            content: result[3]
-          }
-        } else {
-          // Attempt legacy v1 format
-          result = frontmatterRegex.legacy.exec(raw)
+    try {
+      switch (contentType) {
+        case 'markdown':
+          result = frontmatterRegex.markdown.exec(raw)
           if (result[2]) {
             return {
-              title: result[2],
-              description: result[4],
-              content: result[5]
+              ...yaml.safeLoad(result[2]),
+              content: result[3]
+            }
+          } else {
+            // Attempt legacy v1 format
+            result = frontmatterRegex.legacy.exec(raw)
+            if (result[2]) {
+              return {
+                title: result[2],
+                description: result[4],
+                content: result[5]
+              }
             }
           }
-        }
-        break
-      case 'html':
-        result = frontmatterRegex.html.exec(raw)
-        if (result[2]) {
-          return {
-            ...yaml.safeLoad(result[2]),
-            content: result[3]
+          break
+        case 'html':
+          result = frontmatterRegex.html.exec(raw)
+          if (result[2]) {
+            return {
+              ...yaml.safeLoad(result[2]),
+              content: result[3]
+            }
           }
-        }
-        break
+          break
+      }
+    } catch (err) {
+      WIKI.logger.warn('Failed to parse page metadata. Invalid syntax.')
     }
     return {
       content: raw
@@ -371,8 +375,8 @@ module.exports = class Page extends Model {
 
     // -> Check for page access
     if (!WIKI.auth.checkAccess(opts.user, ['write:pages'], {
-      locale: opts.locale,
-      path: opts.path
+      locale: ogPage.localeCode,
+      path: ogPage.path
     })) {
       throw new WIKI.Error.PageUpdateForbidden()
     }
@@ -456,6 +460,14 @@ module.exports = class Page extends Model {
 
     // -> Perform move?
     if ((opts.locale && opts.locale !== page.localeCode) || (opts.path && opts.path !== page.path)) {
+      // -> Check target path access
+      if (!WIKI.auth.checkAccess(opts.user, ['write:pages'], {
+        locale: opts.locale,
+        path: opts.path
+      })) {
+        throw new WIKI.Error.PageMoveForbidden()
+      }
+
       await WIKI.models.pages.movePage({
         id: page.id,
         destinationLocale: opts.locale,
@@ -775,15 +787,7 @@ module.exports = class Page extends Model {
    * @returns {Promise} Promise with no value
    */
   static async deletePage(opts) {
-    let page
-    if (_.has(opts, 'id')) {
-      page = await WIKI.models.pages.query().findById(opts.id)
-    } else {
-      page = await WIKI.models.pages.query().findOne({
-        path: opts.path,
-        localeCode: opts.locale
-      })
-    }
+    const page = await WIKI.models.pages.getPageFromDb(_.has(opts, 'id') ? opts.id : opts);
     if (!page) {
       throw new WIKI.Error.PageNotFound()
     }
