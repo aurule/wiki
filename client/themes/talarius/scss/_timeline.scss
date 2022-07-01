@@ -98,6 +98,10 @@
         .item-title {
           margin: 0;
           padding: 5px 0;
+
+          &:first-child {
+            padding: 0;
+          }
         }
         .item-description {
           margin: 0;
