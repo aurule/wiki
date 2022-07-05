@@ -80,7 +80,7 @@
         justify-content: space-between;
         align-items: flex-end;
 
-        &.right {
+        &:nth-child(3) {
           align-items: flex-start;
         }
       }
