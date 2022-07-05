@@ -289,6 +289,7 @@ import mdMultiTable from 'markdown-it-multimd-table'
 import mdFootnote from 'markdown-it-footnote'
 import mdImsize from 'markdown-it-imsize'
 import mdDeflist from 'markdown-it-deflist'
+import mdTimeline from './markdown/timeline'
 import katex from 'katex'
 import underline from '../../libs/markdown-it-underline'
 import 'katex/dist/contrib/mhchem'
@@ -355,6 +356,7 @@ const md = new MarkdownIt({
   .use(mdFootnote)
   .use(mdImsize)
   .use(mdDeflist)
+  .use(mdTimeline)
 
 // DOMPurify fix for draw.io
 DOMPurify.addHook('uponSanitizeElement', (elm) => {
