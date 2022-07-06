@@ -1,0 +1,8 @@
+key: markdownTimeline
+title: Timelines
+description: Parse special fenced definition lists into a visual timeline
+author: aurule
+icon: mdi-timeline-text-outline
+enabledDefault: true
+dependsOn: markdownCore
+props: {}
