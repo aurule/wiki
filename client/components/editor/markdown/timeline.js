@@ -397,7 +397,6 @@ module.exports = function timelinePlugin(md, options) {
       // tokenize title
       token = this.state.push('heading_open', 'h3', 1)
       token.map = [ this.bounds.start, this.bounds.start + 1 ]
-      token.attrJoin('class', 'item-title')
 
       token = this.state.push('inline', '', 0)
       token.content = this.title
@@ -410,7 +409,6 @@ module.exports = function timelinePlugin(md, options) {
       for(bodyIdx in this.body) {
         token = this.state.push('paragraph_open', 'p', 1)
         token.map = [ this.bounds.start + lineOffset + bodyIdx, this.bounds.end + lineOffset + bodyIdx + 1 ]
-        token.attrJoin('class', 'item-description')
 
         token = this.state.push('inline', '', 0)
         token.content = this.body[bodyIdx]
