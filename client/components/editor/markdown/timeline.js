@@ -133,7 +133,7 @@ module.exports = function timelinePlugin(md, options) {
     token.markup = markup;
     token.block  = true;
     token.info   = params;
-    token.map    = [ startLine, nextLine ];
+    token.map    = [ startLine, startLine + 1 ];
     token.attrJoin('class', 'timeline')
 
     token = state.push('timeline_wrapper_open', 'div', 1);
@@ -149,6 +149,7 @@ module.exports = function timelinePlugin(md, options) {
 
     token        = state.push('timeline_close', 'div', -1);
     token.markup = state.src.slice(start, pos);
+    token.map    = [ nextLine, nextLine + 1 ];
     token.block  = true;
 
     state.env.inTimeline = false;
