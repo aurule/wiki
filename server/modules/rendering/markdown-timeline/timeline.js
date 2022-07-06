@@ -5,30 +5,12 @@
 module.exports = function timelinePlugin(md, options) {
   const isSpace = md.utils.isSpace
 
-  // Search `[:~][\n ]`, returns next pos after marker on success
-  // or -1 on fail.
-  function skipMarker(state, line) {
-    var pos, marker,
-        start = state.bMarks[line] + state.tShift[line],
-        max = state.eMarks[line];
+  ///////////////////
+  // Fence Handler
+  ///////////////////
 
-    if (start >= max) { return -1; }
-
-    // Check bullet
-    marker = state.src.charCodeAt(start++);
-    if (marker !== 0x7E/* ~ */ && marker !== 0x3A/* : */) { return -1; }
-
-    pos = state.skipSpaces(start);
-
-    // require space after ":"
-    if (start === pos) { return -1; }
-
-    // no empty definitions, e.g. "  : "
-    if (pos >= max) { return -1; }
-
-    return start;
-  }
-
+  // since we share our fence syntax with the markdown container plugin, we need to ignore all blocks except
+  // those marked as a timeline
   function validateDefault(params, markup) {
     return params.trim().split(' ', 2)[0] === 'timeline'
   }
@@ -40,6 +22,24 @@ module.exports = function timelinePlugin(md, options) {
       marker_len  = marker_str.length,
       validate    = options.validate || validateDefault;
 
+  /**
+   * Parse for timeline fences
+   *
+   * Matches the syntax:
+   *
+   * ::: timeline
+   *
+   * :::
+   *
+   * Once matched, it sets the inTimeline flag on state.env to true, allowing the other timeline rules to
+   * execute during its call to state.md.block.tokenize(). Afterward, it sets the flag to false.
+   *
+   * @param  {State} state    Markdown-it State object
+   * @param  {int} startLine  Index of initial line
+   * @param  {int} endLine    Index of last valid line
+   * @param  {bool} silent    True if in validation mode
+   * @return {bool}           True if a timeline fence was matched, false if not
+   */
   function timeline (state, startLine, endLine, silent) {
     var pos, nextLine, marker_count, markup, params, token,
         old_parent, old_line_max,
@@ -159,11 +159,30 @@ module.exports = function timelinePlugin(md, options) {
     return true;
   }
 
+  ///////////////////
+  // Break Handler
+  ///////////////////
+
   const break_min_markers = 3,
       break_marker_str  = '-',
       break_marker_char = break_marker_str.charCodeAt(0),
       break_marker_len  = break_marker_str.length;
 
+  /**
+   * Parse for timeline breaks
+   *
+   * Matches the syntax:
+   *
+   * --- title ---
+   *
+   * The trailing dashes are optional.
+   *
+   * @param  {State} state    Markdown-it State object
+   * @param  {int} startLine  Index of initial line
+   * @param  {int} endLine    Index of last valid line
+   * @param  {bool} silent    True if in validation mode
+   * @return {bool}           True if a timeline break was matched, false if not
+   */
   function timeline_break (state, startLine, endLine, silent) {
     let pos, endPos, marker_count, markup, params, token, title,
         start = state.bMarks[startLine] + state.tShift[startLine],
@@ -234,8 +253,36 @@ module.exports = function timelinePlugin(md, options) {
     return true;
   }
 
-  // Search `[:~][\n ]`, returns next pos after marker on success
-  // or -1 on fail.
+  ///////////////////
+  // Item Handling
+  ///////////////////
+
+  /**
+   * Search for item detail marker
+   *
+   * Validations:
+   * - leading character is present
+   * - space appears after leading character
+   * - more characters appear after leading char and space
+   *
+   * Ex:
+   *
+   * : test
+   * > 2
+   *
+   * :test
+   * > -1
+   *
+   * :
+   * > -1
+   *
+   * test
+   * > -1
+   *
+   * @param  {State} state Markdown-it state object
+   * @param  {int}   line  Line index to search
+   * @return {int}         Next character position after the marker on success, or -1 on fail
+   */
   function skipMarker(state, line) {
     var pos, marker,
         start = state.bMarks[line] + state.tShift[line],
@@ -258,11 +305,20 @@ module.exports = function timelinePlugin(md, options) {
     return start;
   }
 
+  /**
+   * Simple bounds class to track start, end, and length of an item
+   */
   class ItemBounds {
     start
     end
     length
 
+    /**
+     * Create an ItemBounds object
+     *
+     * @param  {int} start Index of the starting line
+     * @param  {int} end   Index of the ending line
+     */
     constructor(start, end) {
       this.start = start
       this.end = end
@@ -270,11 +326,23 @@ module.exports = function timelinePlugin(md, options) {
     }
   }
 
+  /**
+   * Year item parsing and tokenization
+   */
   class YearItem {
     title
     bounds
     state
 
+    /**
+     * Create a YearItem object
+     *
+     * The text of the first line in bounds is stored as the year's title. If no bounds are given, an empty
+     * string is used instead.
+     *
+     * @param  {State}           state  Markdown-it State object
+     * @param  {ItemBounds|null} bounds Boundary object for the extent of this item
+     */
     constructor(state, bounds) {
       this.bounds = bounds
       this.state = state
@@ -289,11 +357,17 @@ module.exports = function timelinePlugin(md, options) {
       }
     }
 
-    // <div class="year-item">
-    //   <span class="year">
-    //     title
-    //   </span>
-    // </div>
+    /**
+     * Create tokens for this year item
+     *
+     * <div class="year-item">
+     *   <span class="year">
+     *     title
+     *   </span>
+     * </div>
+     *
+     * @return {void} No return value
+     */
     tokenize() {
       let token;
 
@@ -317,6 +391,9 @@ module.exports = function timelinePlugin(md, options) {
     }
   }
 
+  /**
+   * Full item parsing and tokenization
+   */
   class FullItem {
     title
     label
@@ -324,6 +401,26 @@ module.exports = function timelinePlugin(md, options) {
     bounds
     state
 
+    /**
+     * Create a FullItem object
+     *
+     * The first line in bounds is always the item's title. If there is only one remaining line, it becomes
+     * the item's only body line. Otherwise, the second line becomes the item's label and all remaining lines
+     * are added to the body.
+     *
+     * ex:
+     *
+     * title
+     * : body
+     *
+     * title
+     * : label
+     * : body 1
+     * : body 2
+     *
+     * @param  {State}      state  Markdown-it State object
+     * @param  {ItemBounds} bounds Boundary object for the extent of this item
+     */
     constructor(state, bounds) {
       this.bounds = bounds
       this.state = state
@@ -355,18 +452,23 @@ module.exports = function timelinePlugin(md, options) {
       }
     }
 
-    // <section class="timeline-item">
-    //   <div class="item">
-    //     <div class="item-date">label</div>
-    //     <h3 class="item-title">title</h3>
-    //     <p class="item-description">
-    //       body[0]
-    //     </p>
-    //     <p class="item-description">
-    //       body[1]
-    //     </p>
-    //   </div>
-    // </section>
+    /**
+     * Create tokens for this full item
+     *
+     * <section class="timeline-item">
+     *   <div class="item-date">label</div>
+     *   <h3>title</h3>
+     *   <p>
+     *     body[0]
+     *   </p>
+     *   <p>
+     *     body[1]
+     *   </p>
+     * </section>
+     *
+     *
+     * @return {void} No return value
+     */
     tokenize() {
       let token, bodyIdx,
           lineOffset = this.label ? 2 : 1
@@ -421,10 +523,25 @@ module.exports = function timelinePlugin(md, options) {
   const item_marker_str = ':',
         item_marker_char = item_marker_str.charCodeAt(0);
 
+  /**
+   * Parse for timeline items
+   *
+   * Items on one line become year items, while items with one or more detail lines become full items:
+   *
+   * I'm a year item!
+   *
+   * I'm a full item!
+   * : Because I have a description
+   *
+   * @param  {State} state    Markdown-it State object
+   * @param  {int} startLine  Index of initial line
+   * @param  {int} endLine    Index of last valid line
+   * @param  {bool} silent    True if in validation mode
+   * @return {bool}           True if a timeline item was matched, false if not
+   */
   function timeline_item (state, startLine, endLine, silent) {
     var pos, nextLine, markup, params, token, itemStart, itemEnd, item, bounds,
         itemBounds = [],
-        auto_closed = false,
         start = state.bMarks[startLine] + state.tShift[startLine],
         max = state.eMarks[startLine];
 
@@ -514,6 +631,10 @@ module.exports = function timelinePlugin(md, options) {
     state.line = itemEnd + 1;
     return true;
   }
+
+  ///////////////////
+  // Add Rules
+  ///////////////////
 
   md.block.ruler.before('fence', 'timeline_block', timeline, {
     alt: [ 'paragraph', 'reference', 'blockquote', 'list' ]
