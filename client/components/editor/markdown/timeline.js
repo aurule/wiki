@@ -456,6 +456,7 @@ module.exports = function timelinePlugin(md, options) {
 
       // new item might start immediately, but check for multiple empty lines
       itemStart = itemEnd + 1;
+      if(itemStart >= endLine) { break; }
       while(state.isEmpty(itemStart)) {
         itemStart++
         if(itemStart >= endLine) { break; }
@@ -464,6 +465,7 @@ module.exports = function timelinePlugin(md, options) {
       // always skip break items
       pos = state.bMarks[itemStart] + state.tShift[itemStart];
       if (state.src.charCodeAt(pos) === break_marker_char) { break; }
+      if (state.src.charCodeAt(pos) === marker_char) { break; }
     }
 
     // add wrapper opening token
