@@ -200,7 +200,7 @@ module.exports = function timelinePlugin(md, options) {
         break
       }
     }
-    title = state.src.slice(pos, endPos).trim();
+    title = state.src.slice(pos, endPos + 1).trim();
 
     // Since start is found, we can report success here in validation mode
     //
