@@ -376,10 +376,6 @@ module.exports = function timelinePlugin(md, options) {
       token.map = [ this.bounds.start, this.bounds.end ]
       token.attrJoin('class', 'timeline-item')
 
-      token = this.state.push('full_item_positioner_open', 'div', 1)
-      token.block = true
-      token.attrJoin('class', 'item')
-
       // tokenize label if present
       if(this.label) {
         token = this.state.push('label_open', 'div', 1)
@@ -417,8 +413,6 @@ module.exports = function timelinePlugin(md, options) {
 
         this.state.push('paragraph_close', 'p', -1)
       }
-
-      this.state.push('full_item_positioner_close', 'div', -1)
 
       this.state.push('full_item_close', 'section', -1)
     }
