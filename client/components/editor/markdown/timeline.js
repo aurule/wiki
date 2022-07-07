@@ -3,7 +3,6 @@
 // ------------------------------------
 
 module.exports = function timelinePlugin(md, options) {
-  const isSpace = md.utils.isSpace
 
   ///////////////////
   // Fence Handler
@@ -449,7 +448,9 @@ module.exports = function timelinePlugin(md, options) {
         start = skipMarker(this.state, lineNo)
         max = this.state.eMarks[lineNo];
 
-        this.body.push(this.state.src.slice(start, max).trim());
+        if(start > 0) {
+          this.body.push(this.state.src.slice(start, max).trim());
+        }
       }
     }
 
