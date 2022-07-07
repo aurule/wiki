@@ -3,7 +3,6 @@
 // ------------------------------------
 
 module.exports = function timelinePlugin(md, options) {
-  const isSpace = md.utils.isSpace
 
   ///////////////////
   // Fence Handler
