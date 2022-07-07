@@ -60,7 +60,6 @@
       .divider {
         /* background-color: #ccd5db; */
         background-color: rgb(236, 239, 241);
-        // background-color: mc('grey', '900');
 
         @at-root .theme--dark & {
           background-color: rgb(136, 139, 141);
@@ -69,13 +68,20 @@
         .dot {
           display: block;
           position: relative;
+          border-radius: 50%;
           width: 15px;
           height: 15px;
-          border-radius: 50%;
           left: -5px;
           top: 26px;
+
           /* background-color: #2da1bf; */
           background-color: rgb(30, 136, 229);
+
+          img {
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+          }
         }
       }
 
@@ -92,8 +98,17 @@
       }
 
       .timeline-item {
-        padding: 20px 0 20px 15px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         position: relative;
+
+        &:nth-child(1) {
+          padding-right: 15px;
+        }
+
+        &:nth-child(3) {
+          padding-left: 15px;
+        }
 
         .item-date {
           margin: 0;
@@ -112,6 +127,42 @@
 
         p {
           margin: 0;
+        }
+      }
+
+      /*
+        spacing overrides for 31px dot size
+
+        31px allows perfect centering while 32px does not. Background image for
+        large dot can still be a 32px image and will only suffer minor clipping.
+       */
+      &.large {
+        .divider .dot {
+          width: 31px;
+          height: 31px;
+          left: -13px;
+          top: 19px;
+
+          img {
+            width: 31px;
+            height: 31px;
+          }
+        }
+
+        .year-item {
+          margin-left: 11px;
+          margin-right: 11px;
+        }
+
+        .timeline-item {
+
+          &:nth-child(1) {
+            padding-right: 21px;
+          }
+
+          &:nth-child(3) {
+            padding-left: 21px;
+          }
         }
       }
     }
