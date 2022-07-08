@@ -1,4 +1,4 @@
-/* Styling for example boxes */
+/* Styling for timelines */
 
 .v-main .contents {
 
@@ -132,41 +132,72 @@
           margin: 0;
         }
       }
+    }
 
-      /*
-        spacing overrides for 31px dot size
+    /*
+    spacing overrides for 31px dot size
 
-        31px allows perfect centering while 32px does not. Background image for
-        large dot can still be a 32px image and will only suffer minor clipping.
-       */
-      &.large {
-        .divider .dot {
+    31px allows perfect centering while 32px does not. Background image for
+    large dot can still be a 32px image and will only suffer minor clipping.
+     */
+    .dot-large {
+      .divider .dot {
+        width: 31px;
+        height: 31px;
+        left: -13px;
+        top: 19px;
+
+        img {
           width: 31px;
           height: 31px;
-          left: -13px;
-          top: 19px;
+        }
+      }
 
-          img {
-            width: 31px;
-            height: 31px;
-          }
+      .year-item {
+        margin-left: 11px;
+        margin-right: 11px;
+      }
+
+      .timeline-item {
+
+        &:nth-child(1) {
+          padding-right: 21px;
         }
 
-        .year-item {
-          margin-left: 11px;
-          margin-right: 11px;
+        &:nth-child(3) {
+          padding-left: 21px;
         }
+      }
+    }
 
-        .timeline-item {
+    /*
+    squish left or right column for better use of space
+     */
+    &.squish-left {
+      .break {
+        justify-content: flex-start;
 
-          &:nth-child(1) {
-            padding-right: 21px;
-          }
-
-          &:nth-child(3) {
-            padding-left: 21px;
-          }
+        .title {
+          margin-left: 5em;
         }
+      }
+
+      .wrapper-item {
+        grid-template-columns: 0.25fr 5px 1fr;
+      }
+    }
+
+    &.squish-right {
+      .break {
+        justify-content: flex-end;
+
+        .title {
+          margin-right: 5em;
+        }
+      }
+
+      .wrapper-item {
+        grid-template-columns: 1fr 5px 0.25fr;
       }
     }
   }
