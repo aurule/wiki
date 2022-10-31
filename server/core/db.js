@@ -165,6 +165,7 @@ module.exports = {
 
     // Set init tasks
     let conAttempts = 0
+    const maxAttempts = 3
     let initTasks = {
       // -> Attempt initial connection
       async connect () {
@@ -173,13 +174,13 @@ module.exports = {
           await self.knex.raw('SELECT 1 + 1;')
           WIKI.logger.info('Database Connection Successful [ OK ]')
         } catch (err) {
-          if (conAttempts < 10) {
+          if (conAttempts < maxAttempts) {
             if (err.code) {
               WIKI.logger.error(`Database Connection Error: ${err.code} ${err.address}:${err.port}`)
             } else {
               WIKI.logger.error(`Database Connection Error: ${err.message}`)
             }
-            WIKI.logger.warn(`Will retry in 3 seconds... [Attempt ${++conAttempts} of 10]`)
+            WIKI.logger.warn(`Will retry in 3 seconds... [Attempt ${++conAttempts} of ${maxAttempts}]`)
             await new Promise(resolve => setTimeout(resolve, 3000))
             await initTasks.connect()
           } else {
