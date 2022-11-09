@@ -2,7 +2,7 @@
 # ====================
 # --- Build Assets ---
 # ====================
-FROM node:14-alpine AS assets
+FROM node:16-alpine AS assets
 
 RUN apk add yarn g++ make python3
 
@@ -24,7 +24,7 @@ RUN yarn --production --frozen-lockfile --non-interactive --silent 2> >(grep -v 
 # ===============
 # --- Release ---
 # ===============
-FROM node:14-alpine
+FROM node:16-alpine
 LABEL maintainer="requarks.io"
 
 RUN apk add bash curl git openssh gnupg sqlite --no-cache && \
@@ -49,7 +49,5 @@ VOLUME ["/wiki/data/content"]
 
 EXPOSE 3000
 EXPOSE 3443
-
-# HEALTHCHECK --interval=30s --timeout=30s --start-period=30s --retries=3 CMD curl -f http://localhost:3000/healthz
 
 CMD ["node", "server"]
