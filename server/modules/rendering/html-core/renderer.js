@@ -228,7 +228,7 @@ module.exports = {
 
       // -> Add anchor
       $(elm).attr('id', headerSlug).addClass('toc-header')
-      $(elm).prepend(`<a class="toc-anchor" href="#${headerSlug}">&#xB6;</a> `)
+      $(elm).prepend(`<a class="mdi mdi-link toc-anchor" href="#${headerSlug}"></a> `)
 
       headers.push(headerSlug)
     })
@@ -240,6 +240,16 @@ module.exports = {
     $('body').contents().toArray().forEach(item => {
       if (item && item.type === 'text' && item.parent.name === 'body' && item.data !== `\n` && item.data !== `\r`) {
         $(item).wrap('<div></div>')
+      }
+    })
+
+    // --------------------------------
+    // Wrap root table nodes
+    // --------------------------------
+
+    $('body').contents().toArray().forEach(item => {
+      if (item && item.name === 'table' && item.parent.name === 'body') {
+        $(item).wrap('<div class="table-container"></div>')
       }
     })
 

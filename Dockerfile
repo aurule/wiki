@@ -1,0 +1,53 @@
+###
+# ====================
+# --- Build Assets ---
+# ====================
+FROM node:16-alpine AS assets
+
+RUN apk add yarn g++ make python3
+
+WORKDIR /wiki
+
+COPY ./client ./client
+COPY ./dev ./dev
+COPY ./package.json ./package.json
+COPY ./.babelrc ./.babelrc
+COPY ./.eslintignore ./.eslintignore
+COPY ./.eslintrc.yml ./.eslintrc.yml
+
+RUN yarn cache clean
+RUN yarn --frozen-lockfile --non-interactive --silent 2> >(grep -v warning 1>&2)
+RUN yarn build
+RUN rm -rf /wiki/node_modules
+RUN yarn --production --frozen-lockfile --non-interactive --silent 2> >(grep -v warning 1>&2)
+
+# ===============
+# --- Release ---
+# ===============
+FROM node:16-alpine
+LABEL maintainer="requarks.io"
+
+RUN apk add bash curl git openssh gnupg sqlite --no-cache && \
+    mkdir -p /wiki && \
+    mkdir -p /logs && \
+    mkdir -p /wiki/data/content && \
+    chown -R node:node /wiki /logs
+
+WORKDIR /wiki
+
+COPY --chown=node:node --from=assets /wiki/assets ./assets
+COPY --chown=node:node --from=assets /wiki/node_modules ./node_modules
+COPY --chown=node:node ./server ./server
+COPY --chown=node:node --from=assets /wiki/server/views ./server/views
+COPY --chown=node:node ./config.yml ./config.yml
+COPY --chown=node:node ./package.json ./package.json
+COPY --chown=node:node ./LICENSE ./LICENSE
+
+USER node
+
+VOLUME ["/wiki/data/content"]
+
+EXPOSE 3000
+EXPOSE 3443
+
+CMD ["node", "server"]

@@ -126,11 +126,23 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
           Oleksii<br />(@idokka)
         </a>
       </td>
-      <!--<td align="center" valign="middle" width="148">
+    </tr>
+    <tr>
+      <td align="center" valign="middle" width="148">
+        <a href="https://www.openhost-network.com/" target="_blank">
+          <img src="https://avatars.githubusercontent.com/u/114218287?s=200&v=4">
+        </a>
+      </td>
+      <td align="center" valign="middle" width="148">
+        <a href="https://www.prevo.ch/" target="_blank">
+          <img src="https://avatars.githubusercontent.com/u/114394792?v=4">
+        </a>
+      </td>
+      <td align="center" valign="middle" colspan="4">
         <a href="https://github.com/sponsors/NGPixel" target="_blank">
           <img src="https://static.requarks.io/sponsors/become-148x72.png">
         </a>
-      </td>-->
+      </td>
     </tr>
   </tbody>
 </table>
@@ -139,12 +151,14 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
 <img width="441" height="1" />
 
 - Akira Suenami ([@a-suenami](https://github.com/a-suenami))
+- Armin Reiter ([@arminreiter](https://github.com/arminreiter))
 - Arnaud Marchand ([@snuids](https://github.com/snuids))
 - Brian Douglass ([@bhdouglass](https://github.com/bhdouglass))
 - Bryon Vandiver ([@asterick](https://github.com/asterick))
 - Cameron Steele ([@ATechAdventurer](https://github.com/ATechAdventurer))
 - Charlie Schliesser ([@charlie-s](https://github.com/charlie-s))
 - Cloud Data Hosting LLC ([@CloudDataHostingLLC](https://github.com/CloudDataHostingLLC))
+- Cole Manning ([@RVRX](https://github.com/RVRX))
 - CrazyMarvin ([@CrazyMarvin](https://github.com/CrazyMarvin))
 - David Christian Holin ([@SirGibihm](https://github.com/SirGibihm))
 - Dragan Espenschied ([@despens](https://github.com/despens))
@@ -155,6 +169,7 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
 - Florian Moss ([@florianmoss](https://github.com/florianmoss))
 - GoodCorporateCitizen ([@GoodCorporateCitizen](https://github.com/GoodCorporateCitizen))
 - HeavenBay ([@HeavenBay](https://github.com/heavenbay))
+- HikaruEgashira ([@HikaruEgashira](https://github.com/HikaruEgashira))
 - Ian Hyzy ([@ianhyzy](https://github.com/ianhyzy))
 - Jaimyn Mayer ([@jabelone](https://github.com/jabelone))
 - Jay Lee ([@polyglotm](https://github.com/polyglotm))
@@ -163,11 +178,11 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
 - MaFarine ([@MaFarine](https://github.com/MaFarine))
 - Marcilio Leite Neto ([@marclneto](https://github.com/marclneto))
 - Mattias Johnson ([@mattiasJohnson](https://github.com/mattiasJohnson))
-- Max Ricketts-Uy ([@MaxRickettsUy](https://github.com/MaxRickettsUy))
         
 </td><td>
 <img width="441" height="1" />
         
+- Max Ricketts-Uy ([@MaxRickettsUy](https://github.com/MaxRickettsUy))
 - Mickael Asseline ([@PAPAMICA](https://github.com/PAPAMICA))
 - Mitchell Rowton ([@mrowton](https://github.com/mrowton))
 - M. Scott Ford ([@mscottford](https://github.com/mscottford))
@@ -178,6 +193,7 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
 - Oleksandr Koltsov ([@crambo](https://github.com/crambo))
 - Philipp Schmitt ([@pschmitt](https://github.com/pschmitt))
 - Robert Lanzke ([@winkelement](https://github.com/winkelement))
+- Ruizhe Li ([@liruizhe1995](https://github.com/liruizhe1995))
 - Sam Martin ([@ABitMoreDepth](https://github.com/ABitMoreDepth))
 - Sean Coffey ([@seanecoffey](https://github.com/seanecoffey))
 - Stephan Kristyn ([@stevek-pro](https://github.com/stevek-pro))
@@ -190,6 +206,7 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
 - chaee ([@chaee](https://github.com/chaee))
 - magicpotato ([@fortheday](https://github.com/fortheday))
 - motoacs ([@motoacs](https://github.com/motoacs))
+- muzian666 ([@muzian666](https://github.com/muzian666))
 - rburckner ([@rburckner](https://github.com/rburckner))
 - scorpion ([@scorpion](https://github.com/scorpion))
 - valantien ([@valantien](https://github.com/valantien))
@@ -340,6 +357,23 @@ Support this project by becoming a sponsor. Your logo will show up in the Contri
         <a href="https://opencollective.com/wikijs/sponsor/39/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/39/avatar.svg"></a>
       </td>
     </tr>
+    <tr>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/40/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/40/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/41/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/41/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/42/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/42/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/43/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/43/avatar.svg"></a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://opencollective.com/wikijs/sponsor/44/website" target="_blank"><img src="https://opencollective.com/wikijs/sponsor/44/avatar.svg"></a>
+      </td>
+    </tr>
   </tbody>
 </table>
 </div>
@@ -356,6 +390,7 @@ Thank you to all our patrons! 🙏 [[Become a patron](https://www.patreon.com/re
 - Alex Balabanov
 - Alex Zen
 - Arti Zirk
+- Ave
 - Brandon Curtis
 - Dave 'Sri' Seah
 - djagoo
@@ -370,22 +405,25 @@ Thank you to all our patrons! 🙏 [[Become a patron](https://www.patreon.com/re
 - Hope
 - Ian
 - Imari Childress
+- Iskander Callos
   
 </td><td>
 <img width="441" height="1" />
 
-- Iskander Callos
 - Josh Stewart
 - Justin Dunsworth
 - Keir
 - Loïc CRAMPON
 - Ludgeir Ibanez
+- Lyn Matten
+- Mads Rosendahl
 - Mark Mansur
 - Matt Gedigian
 - Nate Figz
 - Patryk
 - Philipp Schürch
 - Tracey Duffy
+- Quaxim
 - Richeir
 - Shad Narcher
 - SmartNET.works
