@@ -1,6 +1,7 @@
 const md = require('markdown-it')
 const mdAttrs = require('markdown-it-attrs')
 const mdBracketSpan = require('markdown-it-bracketed-spans')
+const mdDecorate = require('markdown-it-decorate')
 const _ = require('lodash')
 const underline = require('./underline')
 
@@ -44,6 +45,7 @@ module.exports = {
       allowedAttributes: ['id', 'class', 'target']
     })
     mkdown.use(mdBracketSpan)
+    mkdown.use(mdDecorate)
 
     for (let child of this.children) {
       const renderer = require(`../${_.kebabCase(child.key)}/renderer.js`)
