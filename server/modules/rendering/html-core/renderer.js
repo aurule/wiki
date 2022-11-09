@@ -228,7 +228,7 @@ module.exports = {
 
       // -> Add anchor
       $(elm).attr('id', headerSlug).addClass('toc-header')
-      $(elm).prepend(`<a class="toc-anchor" href="#${headerSlug}">&#xB6;</a> `)
+      $(elm).prepend(`<a class="mdi mdi-link toc-anchor" href="#${headerSlug}"></a> `)
 
       headers.push(headerSlug)
     })
