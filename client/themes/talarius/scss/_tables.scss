@@ -9,18 +9,32 @@
 
     // alternate row shading in helper class
     &.shaded-table {
-      tr:nth-child(even) {
+      tr {
         td {
-          background-color: mc('grey', '100');
+          &:nth-child(even) {
+            background-color: mc('grey', '50');
+
+            @at-root .theme--dark & {
+              background-color: darken(mc('grey', '900'), 4%);
+            }
+          }
         }
-      }
 
-      @at-root .theme--dark & {
-        background-color: mc('grey', '900');
-
-        tr:nth-child(even) {
+        &:nth-child(even) {
           td {
-            background-color: lighten(mc('grey', '900'), 5%);
+            background-color: mc('grey', '50');
+
+            @at-root .theme--dark & {
+              background-color: darken(mc('grey', '800'), 8%);
+            }
+
+            &:nth-child(even) {
+              background-color: mc('grey', '100');
+
+              @at-root .theme--dark & {
+                background-color: darken(mc('grey', '800'), 10%);
+              }
+            }
           }
         }
       }

@@ -712,36 +712,36 @@
           border-right-color: mc('grey', '800');
         }
 
-        &:nth-child(even) {
-          background-color: mc('grey', '50');
+        // &:nth-child(even) {
+        //   background-color: mc('grey', '50');
 
-          @at-root .theme--dark & {
-            background-color: darken(mc('grey', '900'), 4%);
-          }
-        }
+        //   @at-root .theme--dark & {
+        //     background-color: darken(mc('grey', '900'), 4%);
+        //   }
+        // }
 
         &:last-child {
           border-right: none;
         }
       }
 
-      &:nth-child(even) {
-        td {
-          background-color: mc('grey', '50');
+      // &:nth-child(even) {
+      //   td {
+      //     background-color: mc('grey', '50');
 
-          @at-root .theme--dark & {
-            background-color: darken(mc('grey', '800'), 8%);
-          }
+      //     @at-root .theme--dark & {
+      //       background-color: darken(mc('grey', '800'), 8%);
+      //     }
 
-          &:nth-child(even) {
-            background-color: mc('grey', '100');
+      //     &:nth-child(even) {
+      //       background-color: mc('grey', '100');
 
-            @at-root .theme--dark & {
-              background-color: darken(mc('grey', '800'), 10%);
-            }
-          }
-        }
-      }
+      //       @at-root .theme--dark & {
+      //         background-color: darken(mc('grey', '800'), 10%);
+      //       }
+      //     }
+      //   }
+      // }
 
       &:last-child {
         td {
