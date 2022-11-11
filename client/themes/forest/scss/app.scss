@@ -20,6 +20,7 @@
   }
 
   blockquote.is-aside {
+    background-color: mc('brown', '50');
     border: 1px solid mc('green', '600');
 
     @at-root .theme--dark & {
@@ -28,6 +29,7 @@
   }
 
   blockquote.is-multiquote {
+    background-color: mc('brown', '50');
     border-left: 2px solid mc('green', '600');
 
     @at-root .theme--dark & {
