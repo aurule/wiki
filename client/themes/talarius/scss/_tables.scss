@@ -2,6 +2,21 @@
 
 .v-main .contents {
   table {
+
+    &.dense {
+      td, th {
+        font-size: inherit;
+        padding: .2rem;
+      }
+    }
+
+    &.very-dense {
+      td, th {
+        font-size: .85rem;
+        padding: .2rem;
+      }
+    }
+
     // solid border between multiple body sections
     tbody + tbody tr:first-child td {
       border-top: 2px solid mc('grey', '500');
@@ -9,18 +24,32 @@
 
     // alternate row shading in helper class
     &.shaded-table {
-      tr:nth-child(even) {
+      tr {
         td {
-          background-color: mc('grey', '100');
+          &:nth-child(even) {
+            background-color: mc('grey', '50');
+
+            @at-root .theme--dark & {
+              background-color: darken(mc('grey', '900'), 4%);
+            }
+          }
         }
-      }
 
-      @at-root .theme--dark & {
-        background-color: mc('grey', '900');
-
-        tr:nth-child(even) {
+        &:nth-child(even) {
           td {
-            background-color: lighten(mc('grey', '900'), 5%);
+            background-color: mc('grey', '50');
+
+            @at-root .theme--dark & {
+              background-color: darken(mc('grey', '800'), 8%);
+            }
+
+            &:nth-child(even) {
+              background-color: mc('grey', '100');
+
+              @at-root .theme--dark & {
+                background-color: darken(mc('grey', '800'), 10%);
+              }
+            }
           }
         }
       }
@@ -29,12 +58,6 @@
     // fancy gradient underline for table caption
     caption {
       font-weight: bold;
-      border-left: 0px;
-      border-top: 0px;
-      border-right: 0px;
-      border-bottom: 1px solid mc('grey', '500');
-      border-image: radial-gradient(mc('grey', '700'), rgba(mc('grey', '700'), 0));
-      border-image-slice: 1;
     }
   }
 }

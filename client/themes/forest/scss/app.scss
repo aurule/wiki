@@ -1,0 +1,49 @@
+/* THEME SPECIFIC STYLES */
+
+@import '../../talarius/scss/app';
+
+.v-main .contents {
+  h1 {
+    color: mc('green', '800');
+
+    &::after {
+      background: linear-gradient(to right, mc('green', '400'), rgba(mc('green', '400'), 0));
+
+      @at-root .theme--dark & {
+        background: linear-gradient(to right, mc('green', '300') 0%, mc('green', '500') 10%, rgba(mc('green', '900'), 0) 100%);
+      }
+
+      @at-root .is-rtl & {
+        background: linear-gradient(to left, mc('green', '400'), rgba(mc('green', '400'), 0));
+      }
+    }
+  }
+
+  blockquote.is-aside {
+    background-color: mc('brown', '50');
+    border: 1px solid mc('green', '600');
+
+    @at-root .theme--dark & {
+      border-color: mc('green', '300');
+    }
+  }
+
+  blockquote.is-multiquote {
+    background-color: mc('brown', '50');
+    border-left: 2px solid mc('green', '600');
+
+    @at-root .theme--dark & {
+      border-left: 2px solid mc('green', '400');
+    }
+  }
+
+  .timeline {
+    .wrapper-item {
+      .divider {
+        .dot {
+          background-color: mc('green', '600');
+        }
+      }
+    }
+  }
+}

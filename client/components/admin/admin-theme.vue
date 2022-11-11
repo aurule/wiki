@@ -119,7 +119,8 @@ export default {
       loading: false,
       themes: [
         { text: 'Default', author: 'requarks.io', value: 'default', isInstalled: true, installDate: '', updatedAt: '' },
-        { text: 'Talarius', author: 'Paige Andrews', value: 'talarius', isInstalled: true, installDate: '', updatedAt: '' }
+        { text: 'Talarius', author: 'Paige Andrews', value: 'talarius', isInstalled: true, installDate: '', updatedAt: '' },
+        { text: 'Forest', author: 'Paige Andrews', value: 'forest', isInstalled: true, installDate: '', updatedAt: '' }
       ],
       iconsets: [
         { text: 'Material Design Icons (default)', value: 'mdi' },
