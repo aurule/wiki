@@ -2,9 +2,9 @@
 
 .v-main .contents {
   blockquote.is-multiquote {
-    background-color: rgb(236, 239, 241);
+    background-color: mc('blue-grey', '50');
     display: block;
-    border-left: 2px solid rgb(30, 136, 229);
+    border-left: 2px solid mc('blue', '600');
     padding: 10px 0 10px 10px;
     border-radius: 8px;
 
@@ -13,8 +13,8 @@
     }
 
     @at-root .theme--dark & {
-      background-color: rgb(46, 46, 46);
-      border-left: 2px solid rgb(100, 181, 246);
+      background-color: mc('grey', '850');
+      border-left: 2px solid mc('blue', '400');
     }
 
     .line, .context {
