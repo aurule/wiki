@@ -58,11 +58,11 @@
       margin-bottom: 0;
 
       .divider {
-        /* background-color: #ccd5db; */
-        background-color: rgb(236, 239, 241);
+        background-color: mc('blue-grey', '50');
 
         @at-root .theme--dark & {
-          background-color: rgb(136, 139, 141);
+          // background-color: rgb(136, 139, 141); // original, slightly lighter
+          background-color: mc('grey', '600');
         }
 
         .dot {
@@ -77,8 +77,7 @@
           left: -5px;
           top: 26px;
 
-          /* background-color: #2da1bf; */
-          background-color: rgb(30, 136, 229);
+          background-color: mc('blue', '600');
 
           img {
             border-radius: 50%;
