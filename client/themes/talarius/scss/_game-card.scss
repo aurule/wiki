@@ -2,26 +2,26 @@
 
 .v-main .contents {
   blockquote.is-game {
-    background-color: mc('purple', '50');
-    border-color: mc('purple', '300');
+    background-color: mc('deep-purple', '50');
+    border-color: mc('deep-purple', '300');
 
     &::before {
       content: "\F0E36";
     }
 
     code {
-      background-color: mc('purple', '50');
-      color: mc('purple', '900');
+      background-color: mc('deep-purple', '50');
+      color: mc('deep-purple', '900');
     }
 
     h2 {
       a.is-internal-link {
         text-decoration: none;
         position: relative;
-        color: mc('purple', '400');
+        color: mc('deep-purple', '400');
         &:hover {
           text-decoration: underline;
-          color: mc('purple', '300');
+          color: mc('deep-purple', '300');
         }
         &::after {
           font: normal normal normal 24px/1 "Material Design Icons", sans-serif;
@@ -32,8 +32,8 @@
     }
 
     @at-root .theme--dark & {
-      background-color: mc('purple', '900');
-      border-color: mc('purple', '400');
+      background-color: mc('deep-purple', '900');
+      border-color: mc('deep-purple', '400');
     }
   }
 }
