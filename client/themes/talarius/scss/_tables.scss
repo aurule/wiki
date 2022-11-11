@@ -2,6 +2,15 @@
 
 .v-main .contents {
   table {
+
+    &.dense {
+      td, th {
+        font-size: inherit;
+        padding: .2rem;
+      }
+    }
+
+
     // solid border between multiple body sections
     tbody + tbody tr:first-child td {
       border-top: 2px solid mc('grey', '500');
