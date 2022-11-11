@@ -4,24 +4,10 @@
 
 .v-main .contents {
   h1 {
-    padding: 0;
     color: mc('green', '800');
-    margin-top: 2rem;
-    position: relative;
-
-    @at-root .theme--dark & {
-      color: mc('grey', '300');
-    }
 
     &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
       background: linear-gradient(to right, mc('green', '400'), rgba(mc('green', '400'), 0));
-      border-radius: 3px;
 
       @at-root .theme--dark & {
         background: linear-gradient(to right, mc('green', '300') 0%, mc('green', '500') 10%, rgba(mc('green', '900'), 0) 100%);
@@ -30,8 +16,31 @@
       @at-root .is-rtl & {
         background: linear-gradient(to left, mc('green', '400'), rgba(mc('green', '400'), 0));
       }
-      @at-root .theme--dark.is-rtl & {
-        background: linear-gradient(to left, mc('grey', '600'), rgba(mc('grey', '600'), 0));
+    }
+  }
+
+  blockquote.is-aside {
+    border: 1px solid mc('green', '600');
+
+    @at-root .theme--dark & {
+      border-color: mc('green', '300');
+    }
+  }
+
+  blockquote.is-multiquote {
+    border-left: 2px solid mc('green', '600');
+
+    @at-root .theme--dark & {
+      border-left: 2px solid mc('green', '400');
+    }
+  }
+
+  .timeline {
+    .wrapper-item {
+      .divider {
+        .dot {
+          background-color: mc('green', '600');
+        }
       }
     }
   }
