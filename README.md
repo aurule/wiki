@@ -1,6 +1,9 @@
 <div align="center">
 
-<img src="https://static.requarks.io/logo/wikijs-full.svg" alt="Wiki.js" width="600" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://static.requarks.io/logo/wikijs-full-darktheme.svg">
+  <img alt="Wiki.js" src="https://static.requarks.io/logo/wikijs-full.svg" width="600">
+</picture>
 
 [![Release](https://img.shields.io/github/release/Requarks/wiki.svg?style=flat&maxAge=3600)](https://github.com/Requarks/wiki/releases)
 [![License](https://img.shields.io/badge/license-AGPLv3-blue.svg?style=flat)](https://github.com/requarks/wiki/blob/master/LICENSE)
@@ -191,6 +194,7 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
 - Nina Reynolds ([@cutecycle](https://github.com/cutecycle))
 - Noel Cower ([@nilium](https://github.com/nilium))
 - Oleksandr Koltsov ([@crambo](https://github.com/crambo))
+- Phi Zeroth ([@phizeroth](https://github.com/phizeroth))
 - Philipp Schmitt ([@pschmitt](https://github.com/pschmitt))
 - Robert Lanzke ([@winkelement](https://github.com/winkelement))
 - Ruizhe Li ([@liruizhe1995](https://github.com/liruizhe1995))
@@ -201,6 +205,7 @@ Support this project by becoming a sponsor. Your name will show up in the Contri
 - Tyler Denman ([@tylerguy](https://github.com/tylerguy))
 - Victor Bilgin ([@vbilgin](https://github.com/vbilgin))
 - VMO Solutions ([@vmosolutions](https://github.com/vmosolutions))
+- ameyrakheja ([@ameyrakheja](https://github.com/ameyrakheja))
 - aniketpanjwani ([@aniketpanjwani](https://github.com/aniketpanjwani))
 - aytaa ([@aytaa](https://github.com/aytaa))
 - chaee ([@chaee](https://github.com/chaee))
@@ -392,10 +397,12 @@ Thank you to all our patrons! 🙏 [[Become a patron](https://www.patreon.com/re
 - Arti Zirk
 - Ave
 - Brandon Curtis
+- Daniel T. Holtzclaw
 - Dave 'Sri' Seah
 - djagoo
 - dz
 - Douglas Lassance
+- Ergoflix
 - Ernie Reid
 - Etienne
 - Flemis Jurgenheimer
@@ -406,11 +413,11 @@ Thank you to all our patrons! 🙏 [[Become a patron](https://www.patreon.com/re
 - Ian
 - Imari Childress
 - Iskander Callos
+- Josh Stewart
   
 </td><td>
 <img width="441" height="1" />
 
-- Josh Stewart
 - Justin Dunsworth
 - Keir
 - Loïc CRAMPON
@@ -419,15 +426,19 @@ Thank you to all our patrons! 🙏 [[Become a patron](https://www.patreon.com/re
 - Mads Rosendahl
 - Mark Mansur
 - Matt Gedigian
+- Mike Ditton
 - Nate Figz
 - Patryk
 - Philipp Schürch
 - Tracey Duffy
 - Quaxim
 - Richeir
+- Sergio Navarro Fernández
 - Shad Narcher
+- ShadowVoyd
 - SmartNET.works
 - Stepan Sokolovskyi
+- Zach Crawford
 - Zach Maynard
 - 张白驹
 
@@ -461,6 +472,9 @@ This project exists thanks to all the people who contribute. [[Contribute]](http
 
 ![Lokalise](https://static.requarks.io/logo/lokalise-text-h40.png)  
 [Lokalise](https://lokalise.com/) for providing access to their great localization tool.
+
+![MacStadium](https://static.requarks.io/logo/macstadium-h40.png)  
+[MacStadium](https://www.macstadium.com) for providing access to their Mac hardware in the cloud.
 
 ![Netlify](https://js.wiki/legacy/logo_netlify.png)  
 [Netlify](https://www.netlify.com) for providing hosting for our website.
