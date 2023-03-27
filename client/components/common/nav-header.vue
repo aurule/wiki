@@ -247,7 +247,7 @@
                 v-icon(color='grey') mdi-account-circle
             span {{$t('common:header.login')}}
 
-    page-selector(mode='create', v-model='newPageModal', :open-handler='pageNewCreate', :locale='locale')
+    page-selector(mode='create', v-model='newPageOpts.modal', :open-handler='pageNewCreate', :path='newPageOpts.path', :locale='newPageOpts.locale')
     page-selector(mode='move', v-model='movePageModal', :open-handler='pageMoveRename', :path='path', :locale='locale')
     page-selector(mode='create', v-model='duplicateOpts.modal', :open-handler='pageDuplicateHandle', :path='duplicateOpts.path', :locale='duplicateOpts.locale')
     page-delete(v-model='deletePageModal', v-if='path && path.length')
@@ -298,6 +298,11 @@ export default {
       locales: siteLangs,
       isDevMode: false,
       duplicateOpts: {
+        locale: 'en',
+        path: 'new-page',
+        modal: false
+      },
+      newPageOpts: {
         locale: 'en',
         path: 'new-page',
         modal: false
@@ -411,7 +416,12 @@ export default {
       this.$root.$emit('searchMove', dir)
     },
     pageNew () {
-      this.newPageModal = true
+      const pathParts = this.path.split('/')
+      this.newPageOpts = {
+        locale: this.locale,
+        path: (pathParts.length > 1) ? _.initial(pathParts).join('/') + `/new-page` : `new-page`,
+        modal: true
+      }
     },
     pageNewCreate ({ path, locale }) {
       window.location.assign(`/e/${locale}/${path}`)
