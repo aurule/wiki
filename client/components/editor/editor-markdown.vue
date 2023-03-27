@@ -247,7 +247,6 @@ import 'codemirror/addon/fold/foldcode.js'
 import 'codemirror/addon/fold/foldgutter.js'
 import 'codemirror/addon/fold/foldgutter.css'
 import 'codemirror/addon/edit/continuelist.js'
-import './markdown/fold'
 
 // Markdown-it
 import MarkdownIt from 'markdown-it'
