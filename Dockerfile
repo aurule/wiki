@@ -2,29 +2,32 @@
 # ====================
 # --- Build Assets ---
 # ====================
-FROM node:16-alpine AS assets
+FROM node:18-alpine AS assets
 
-RUN apk add yarn g++ make python3
+RUN apk add yarn g++ make cmake python3 --no-cache
 
 WORKDIR /wiki
 
 COPY ./client ./client
 COPY ./dev ./dev
+COPY ./patches ./patches
 COPY ./package.json ./package.json
+COPY ./yarn.lock ./yarn.lock
 COPY ./.babelrc ./.babelrc
 COPY ./.eslintignore ./.eslintignore
 COPY ./.eslintrc.yml ./.eslintrc.yml
 
 RUN yarn cache clean
-RUN yarn --frozen-lockfile --non-interactive --silent 2> >(grep -v warning 1>&2)
+RUN yarn --frozen-lockfile --non-interactive
 RUN yarn build
 RUN rm -rf /wiki/node_modules
-RUN yarn --production --frozen-lockfile --non-interactive --silent 2> >(grep -v warning 1>&2)
+RUN yarn --production --frozen-lockfile --non-interactive
+RUN yarn patch-package
 
 # ===============
 # --- Release ---
 # ===============
-FROM node:16-alpine
+FROM node:18-alpine
 LABEL maintainer="requarks.io"
 
 RUN apk add bash curl git openssh gnupg sqlite --no-cache && \
@@ -41,6 +44,7 @@ COPY --chown=node:node ./server ./server
 COPY --chown=node:node --from=assets /wiki/server/views ./server/views
 COPY --chown=node:node ./config.yml ./config.yml
 COPY --chown=node:node ./package.json ./package.json
+COPY --chown=node:node ./yarn.lock ./yarn.lock
 COPY --chown=node:node ./LICENSE ./LICENSE
 
 USER node
