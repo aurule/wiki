@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/Requarks/wiki#readme",
   "engines": {
-    "node": ">=18.12"
+    "node": ">=20"
   },
   "dependencies": {
     "@aurule/ckeditor5": "19.0.1-wiki.2-talarius2",
